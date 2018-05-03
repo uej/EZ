@@ -1,0 +1,66 @@
+2018-05-03 09:43:09 Exception: not exist Controller \app\sssssss\controller\SdfsfsController in E:\github\ez\ez\core\Application.php:44
+Stack trace:
+#0 E:\github\ez\ez\core\Ez.php(98): ez\core\Application->run()
+#1 E:\github\ez\public\index.php(22): ez\core\Ez::start()
+#2 {main}
+10.10.10.12
+10.10.10.12:8004/sssssss/sdfsfs/sfsdf.sdf?sfd=sf
+
+2018-05-03 10:02:12 Exception: template not exists in E:\github\ez\ez\core\Controller.php:90
+Stack trace:
+#0 E:\github\ez\app\example\controller\IndexController.php(20): ez\core\Controller->display()
+#1 E:\github\ez\ez\core\Application.php(39): app\example\controller\IndexController->index()
+#2 E:\github\ez\ez\core\Ez.php(98): ez\core\Application->run()
+#3 E:\github\ez\public\index.php(22): ez\core\Ez::start()
+#4 {main}
+10.10.10.12
+10.10.10.12:8004/
+
+2018-05-03 10:04:20 Exception: not exist Controller \app\sssssss\controller\SdfsfsController in E:\github\ez\ez\core\Application.php:44
+Stack trace:
+#0 E:\github\ez\ez\core\Ez.php(98): ez\core\Application->run()
+#1 E:\github\ez\public\index.php(22): ez\core\Ez::start()
+#2 {main}
+10.10.10.12
+10.10.10.12:8004/sssssss/sdfsfs/sfsdf.sdf?sfd=sf
+
+2018-05-03 10:04:28 Exception: not exist Controller \app\sssssss\controller\SdfsfsController in E:\github\ez\ez\core\Application.php:44
+Stack trace:
+#0 E:\github\ez\ez\core\Ez.php(98): ez\core\Application->run()
+#1 E:\github\ez\public\index.php(22): ez\core\Ez::start()
+#2 {main}
+10.10.10.12
+10.10.10.12:8004/sssssss/sdfsfs/sfsdf.sdf?sfd=sf
+
+2018-05-03 10:06:15 Exception: not exist Controller \app\sssssss\controller\SdfsfsController in E:\github\ez\ez\core\Application.php:44
+Stack trace:
+#0 E:\github\ez\ez\core\Ez.php(98): ez\core\Application->run()
+#1 E:\github\ez\public\index.php(22): ez\core\Ez::start()
+#2 {main}
+10.10.10.12
+10.10.10.12:8004/sssssss/sdfsfs/sfsdf.sdf?sfd=sf
+
+2018-05-03 10:06:15 Exception: not exist Controller \app\iasd\controller\SdfsfsController in E:\github\ez\ez\core\Application.php:44
+Stack trace:
+#0 E:\github\ez\ez\core\Ez.php(98): ez\core\Application->run()
+#1 E:\github\ez\public\index.php(22): ez\core\Ez::start()
+#2 {main}
+10.10.10.12
+10.10.10.12:8004/iasd/sdfsfs/sfsdf.sdf?sfd=sf
+
+2018-05-03 10:06:16 Exception: not exist Controller \app\sssssss\controller\SdfsfsController in E:\github\ez\ez\core\Application.php:44
+Stack trace:
+#0 E:\github\ez\ez\core\Ez.php(98): ez\core\Application->run()
+#1 E:\github\ez\public\index.php(22): ez\core\Ez::start()
+#2 {main}
+10.10.10.12
+10.10.10.12:8004/sssssss/sdfsfs/sfsdf.sdf?sfd=sf
+
+2018-05-03 10:44:31 ErrorLevel:2, E_WARNING: unlink(E:\github\ez\config/../data/upload/upload_tmp/11ac2d27f7ba6f2e494db8624bc08631_49.part): Permission denied in E:\github\ez\ez\driver\Upload.php at line 264
+10.10.10.12
+10.10.10.12:8004/example/index/doup.html
+
+2018-05-03 11:42:23 ErrorLevel:8, E_NOTICE: iconv(): Wrong charset, conversion from `unicode' to `utf-8' is not allowed in E:\github\ez\ez\tool\Uploader.php at line 67
+10.10.10.12
+10.10.10.12:8004/example/index/uedtserv.html?action=uploadimage
+
