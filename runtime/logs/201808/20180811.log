@@ -1,0 +1,444 @@
+2018-08-11 00:01:30 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(175): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('select', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:05:20 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:06:27 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:07:27 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:07:28 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:07:29 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:07:29 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:07:29 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:07:29 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:07:30 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:07:30 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:10:07 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:10:08 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:10:40 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:10:41 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:10:53 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:10:54 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:10:54 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:10:54 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:10:54 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:11:47 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:15:17 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:20:28 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:21:39 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:21:41 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:21:54 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:21:55 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:23:49 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:245
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:26:02 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:245
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:26:40 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:246
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(31): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:34:19 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(34): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:36:06 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(34): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:36:07 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(34): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:36:08 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(34): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:36:08 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(34): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:36:08 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(34): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+
+2018-08-11 00:36:09 PDOException: SQLSTATE[HY000] [2002] Connection refused in /var/www/site/ezphptest/ez/core/Medoo.php:241
+Stack trace:
+#0 /var/www/site/ezphptest/ez/core/Model.php(95): ez\core\Medoo->__construct(Array)
+#1 /var/www/site/ezphptest/ez/core/Model.php(145): ez\core\Model::makeMedoo(2)
+#2 /var/www/site/ezphptest/app/example/controller/IndexController.php(34): ez\core\Model->__call('error', Array)
+#3 /var/www/site/ezphptest/ez/core/Application.php(39): app\example\controller\IndexController->add()
+#4 /var/www/site/ezphptest/ez/core/Ez.php(98): ez\core\Application->run()
+#5 /var/www/site/ezphptest/public/index.php(22): ez\core\Ez::start()
+#6 {main}
+192.168.19.1
+w.ez.cn/index.php/example/index/add
+

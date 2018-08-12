@@ -1,0 +1,8 @@
+2018-08-12 18:09:50 ErrorLevel:8, E_NOTICE: Undefined variable: a in /var/www/site/ezphptest/app/example/controller/IndexController.php at line 20
+192.168.19.1
+w.ez.cn/
+
+2018-08-12 18:13:47 ErrorLevel:8, E_NOTICE: Undefined variable: a in /var/www/site/ezphptest/app/example/controller/IndexController.php at line 20
+192.168.19.1
+w.ez.cn/
+

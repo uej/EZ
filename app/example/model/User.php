@@ -7,10 +7,9 @@ use ez\core\Model;
  * 
  * @author lxj
  */
-class Test extends Model
+class User extends Model
 {
-    
-    public static $tableName = 'test';
+    public static $tableName = 'user';
     
     
 }

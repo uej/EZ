@@ -56,7 +56,7 @@ class Route
         if (is_file($configPath)) {
             $config = include $configPath;
             foreach ($config as $key => $val) {
-                if (in_array($key, ['defaultApp', 'defaultController', 'defaultAction', 'urlRewrite', 'urlSuffix', 'sessionAutoStart', 'sessionSavePath', 'sessionDriver', 'sessionExpire', 'templateSuffix', 'route', 'openGzip'])) {
+                if (in_array($key, ['defaultApp', 'urlRewrite', 'urlSuffix', 'sessionAutoStart', 'sessionSavePath', 'sessionDriver', 'sessionExpire', 'templateSuffix', 'route', 'openGzip'])) {
                     continue;
                 }
                 $_config[$key]  = $val;
@@ -99,14 +99,14 @@ class Route
         
         /* 控制器 */
         if (isset($param[1]) && !empty($param[1])) {
-            $this->controller = strtolower($param[1]);
+            $this->controller = $param[1];
         } else {
             $this->controller = Ez::config('defaultController');
         }
         
         /* 方法 */
         if (isset($param[2]) && !empty($param[2])) {
-            $this->action = strtolower($param[2]);
+            $this->action = $param[2];
         } else {
             $this->action = Ez::config('defaultAction');
         }

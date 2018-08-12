@@ -2,7 +2,7 @@
 namespace app\example\controller;
 use ez\core\Controller;
 use ez\core\Route;
-use app\example\model\Test;
+use app\example\model\User;
 
 /**
  * 示例控制器
@@ -16,17 +16,25 @@ class IndexController extends Controller
     }
 
     public function index() {
-        $Test = new Test();
         
-        
-        $this->display(['a' => '思考交水电费']);
+        $this->display($a);
     }
     
     public function add() {
-        $Test = new Test();
+        $user = new User();
+        $a = $user->insert([
+            'name'      => 'asdasasd',
+            'password'  => '三大傻接收到卡时间段卡机双打卡死电话卡',
+            'roleId'    => '1',
+            'createTime'=> time(),
+            'companyId' => '12',
+        ]);
+        dump($user->id());
         
-        var_dump($Test->insert(['Value' => 'ssd萨达阿斯达', 'Num' => 22]));
-        var_dump($Test->select('*', ['ID[<>]' => [100, 120]]));
+        
+        dump($user->select('*'));
+        
+        dump($user->error());
     }
     
     public function t3() {

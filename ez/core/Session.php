@@ -43,13 +43,8 @@ class Session
             return TRUE;
         }
         
-        if (is_string($key) && $key !== NULL) {
+        if (is_string($key)) {
             $_SESSION[$key] = $value;
-            return TRUE;
-        }
-        
-        if (is_string($key) && $value === NULL) {
-            $_SESSION[$key] = NULL;
             return TRUE;
         }
         

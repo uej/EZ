@@ -49,6 +49,7 @@ class Model
     /**
      * 创建medoo实例
      * 
+     * @param integer $type 数据库链接选择，1：主 2：从
      * @access public
      */
     public static function makeMedoo($type = 1)
@@ -427,7 +428,7 @@ class Model
         }
         foreach ($data as $key => $val) {
             if (in_array($key, $keys)) {
-                $arr[$key] = trim($val);      // 全局转换html元素
+                $arr[$key] = trim($val);
             }
         }
         
