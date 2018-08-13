@@ -296,7 +296,7 @@ class VerifyCode {
      */
     private function _background()
     {
-        $path = dirname(__FILE__).'/Verify/bgs/';
+        $path = dirname(__FILE__).'/VerifyCode/bgs/';
         $dir = dir($path);
 
         $bgs = array();		
