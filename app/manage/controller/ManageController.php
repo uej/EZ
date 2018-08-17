@@ -24,7 +24,8 @@ class ManageController extends Controller
      * 
      * @access public
      */
-    public function __construct() {
+    public function __construct()
+    {
         parent::__construct();
         
         if (Ez::config('manageIpControl')) {
@@ -38,6 +39,16 @@ class ManageController extends Controller
         }
         
         $this->checkAuth();
+    }
+    
+    /**
+     * 权限检查
+     * 
+     * @access protected
+     */
+    protected function checkAuth()
+    {
+        
     }
     
     /**
