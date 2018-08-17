@@ -78,7 +78,7 @@ class Route
                 $pathInfo = trim(str_replace(Ez::config('urlSuffix'), '', filter_input(INPUT_SERVER, 'PATH_INFO')), '/');
             }
             
-            if (!preg_match('/^[a-zA-Z][a-zA-Z0-9\/]*$/', $pathInfo)) {
+            if (!preg_match('/^[a-zA-Z][_a-zA-Z0-9\/]*$/', $pathInfo)) {
                 throw new \Exception('非法的pathInfo来自' . Network::get_ip());
             }
             $param = explode('/', $pathInfo);
