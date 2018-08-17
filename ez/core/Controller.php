@@ -56,7 +56,7 @@ class Controller
     /**
      * 显示模板
      * 
-     * @param string $view 模板名称，小写，为空则根据方法名自动定位
+     * @param mixed $view 模板名称，小写，为空则根据方法名自动定位，为数组时自动定位模板
      * @param array $data 传递到模板的变量数组
      * 
      * @access public

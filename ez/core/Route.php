@@ -71,23 +71,19 @@ class Route
      */
     public function parsePath()
     {
-        /* url重写 */
-        if (Ez::config('urlRewrite')) {
-            if (isset($_SERVER['REDIRECT_PATH_INFO']) && !empty($_SERVER['REDIRECT_PATH_INFO'])) {
-                $pathinfo = trim(str_replace(Ez::config('urlSuffix'), '', filter_input(INPUT_SERVER, 'REDIRECT_PATH_INFO')), '/');
-                $param = explode('/', $pathinfo);
-            } elseif (isset($_SERVER['PATH_INFO']) && !empty($_SERVER['PATH_INFO'])) {
-                $param = explode('/', trim(str_replace(Ez::config('urlSuffix'), '', filter_input(INPUT_SERVER, 'PATH_INFO')), '/'));
+        if (!empty($_SERVER['REDIRECT_PATH_INFO']) || !empty($_SERVER['PATH_INFO'])) {
+            if (!empty($_SERVER['REDIRECT_PATH_INFO'])) {
+                $pathInfo = trim(str_replace(Ez::config('urlSuffix'), '', filter_input(INPUT_SERVER, 'REDIRECT_PATH_INFO')), '/');
             } else {
-                $param = [];
+                $pathInfo = trim(str_replace(Ez::config('urlSuffix'), '', filter_input(INPUT_SERVER, 'PATH_INFO')), '/');
             }
             
-        } else {
-            if (isset($_SERVER['PATH_INFO']) && !empty($_SERVER['PATH_INFO'])) {
-                $param = explode('/', trim(str_replace(Ez::config('urlSuffix'), '', filter_input(INPUT_SERVER, 'PATH_INFO')), '/'));
-            } else {
-                $param = [];
+            if (!preg_match('/^[a-zA-Z][a-zA-Z0-9\/]*$/', $pathInfo)) {
+                throw new \Exception('非法的pathInfo来自' . Network::get_ip());
             }
+            $param = explode('/', $pathInfo);
+        } else {
+            $param = [];
         }
         
         /* 应用 */

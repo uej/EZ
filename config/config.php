@@ -6,7 +6,7 @@
  */
 return [
     /* 是否开启调试 */
-    'debug'             => 0,
+    'debug'             => 1,
     
     /* 数据库配置 */
     'dbType'            => 'mysql',
@@ -42,7 +42,7 @@ return [
     'defaultAction'     => 'index',
     
     /* url规则配置 */
-    'urlRewrite'        => TRUE,
+    'urlRewrite'        => 0,
     'urlSuffix'         => '.html',
     
     /* session配置 */
