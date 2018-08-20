@@ -11,12 +11,30 @@ use app\example\model\User;
  */
 class IndexController extends Controller
 {
-    public function __construct() {
-        parent::__construct();
-    }
 
     public function index() {
-        $this->display(['a' => 'sdfsdf']);
+        echo (\ez\tool\Xml::encode([
+            'data'  => [
+                [
+                    'a',
+                    'b',
+                    'c'
+                ],
+                [
+                    'asdasd',
+                    'dddddd',
+                    'sssssss',
+                ]
+            ],
+            'info' => [
+                'name' => 'lxj',
+                'phone' => '173',
+            ],
+            'status' => 1,
+        ]));
+        
+        $xml = '<?xml version="1.0" encoding="utf-8"?><data><item id="0">a</item><item id="1">b</item><item id="2">c</item></data><data><item id="0">asdasd</item><item id="1">dddddd</item><item id="2">sssssss</item></data><info><name>lxj</name><phone>173</phone></info><status>1</status>';
+        dump(simplexml_load_string($xml));
     }
     
     public function add() {

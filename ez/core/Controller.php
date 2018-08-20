@@ -36,13 +36,29 @@ class Controller
     }
     
     /**
+     * 是否AJAX请求
+     *
+     * @access protected
+     * @return bool
+     */
+    protected function isAjax()
+    {
+        if (isset($_SERVER['HTTP_X_REQUESTED_WITH'])) {
+            if ('xmlhttprequest' == strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])) {
+                return true;
+			}
+        }
+        return false;
+    }
+    
+    /**
      * 添加模板变量
      * 
      * @param mixed $name 变量名/模板变量键值对
      * @param mixed $value 变量值
-     * @access public
+     * @access protected
      */
-    public function assign($name, $value = '')
+    protected function assign($name, $value = '')
     {
         if (is_array($name)) {
             $this->templateVariable = array_merge($this->templateVariable, $name);
@@ -59,9 +75,9 @@ class Controller
      * @param mixed $view 模板名称，小写，为空则根据方法名自动定位，为数组时自动定位模板
      * @param array $data 传递到模板的变量数组
      * 
-     * @access public
+     * @access protected
      */
-    public function display($view = '', $data = [])
+    protected function display($view = '', $data = [])
     {
         /* 未指定模板，在默认位置寻找模板加载 */
         if (is_array($view)) {
@@ -103,9 +119,9 @@ class Controller
      * @param string $msg 跳转提示信息
      * @return void
      * 
-     * @access public
+     * @access protected
      */
-    public function redirect($url, $params = [], $delay = 0, $msg='')
+    protected function redirect($url, $params = [], $delay = 0, $msg='')
     {
         $url = Route::createUrl($url, $params);
         Route::redirect($url, $delay, $msg);
@@ -114,53 +130,80 @@ class Controller
     /**
      * 成功跳转
      * 
-     * @access public
+     * @access protected
      */
-    public function success($msg = '', $delay = 1) {
-        if (!isset($this->templateVariable['jumpUrl'])) {
-            $url = filter_input(INPUT_SERVER, 'HTTP_REFERER');
-            $this->assign('jumpUrl', $url);
+    protected function success($msg = '操作成功', $delay = 1) {
+        if ($this->isAjax()) {
+            $this->ajaxReturn($msg);
+        } else {
+            if (!isset($this->templateVariable['jumpUrl'])) {
+                $url = filter_input(INPUT_SERVER, 'HTTP_REFERER');
+                $this->assign('jumpUrl', $url);
+            }
+
+            $this->assign('message', $msg);
+            $this->assign('status', 1);
+            $this->assign('waitSecond', $delay);
+            $this->display(__DIR__.'/../template/success.php');
+            die;
         }
-        
-        $this->assign('message', $msg);
-        $this->assign('status', 1);
-        $this->assign('waitSecond', $delay);
-        $this->display(__DIR__.'/../template/success.php');
-        die;
     }
     
     /**
      * 失败跳转
      * 
-     * @access public
+     * @access protected
      */
-    public function error($msg = "", $delay = 5) {
-        if (!isset($this->templateVariable['jumpUrl'])) {
-            $this->assign('jumpUrl', "javascript:history.back(-1);");
+    protected function error($msg = '操作失败', $delay = 5) {
+        if ($this->isAjax()) {
+            $this->ajaxReturn($msg, 0);
+        } else {
+            if (!isset($this->templateVariable['jumpUrl'])) {
+                $this->assign('jumpUrl', "javascript:history.back(-1);");
+            }
+
+            $this->assign('message', $msg);
+            $this->assign('status', 0);
+            $this->assign('waitSecond', $delay);
+            $this->display(__DIR__.'/../template/success.php');
+            die;
         }
-        
-        $this->assign('message', $msg);
-        $this->assign('status', 0);
-        $this->assign('waitSecond', $delay);
-        $this->display(__DIR__.'/../template/success.php');
-        die;
     }
     
     /**
-     * ajax返回
-     * 
-     * @param array 数据数组
-     * @param string JSON、STRING
+     * Ajax方式返回数据到客户端
+     *
+     * @access protected
+     *
+     * @param string $info 提示信息
+     * @param integer $status 返回状态
+     * @param mixed $data 要返回的数据
+     * @param string $type ajax返回类型 JSON XML
+     *
+     * @return void
      */
-    public function ajaxReturn($data, $type = 'JSON')
+    protected function ajaxReturn($info = '', $status = 1, $data = '', $type = 'JSON')
     {
-        switch (strtoupper($type)) {
-            case 'JSON':
-                is_array($data) && die(json_encode($data, JSON_UNESCAPED_UNICODE));
-                break;
-            case 'STRING':
-                is_string($data) && die($data);
-                break;
+        $result = [
+            'status'    => $status,
+            'info'      => $info,
+            'data'      => $data,
+        ];
+		
+        if (strtoupper($type) == 'JSON') {
+            /* 返回JSON数据格式到客户端 包含状态信息 */
+            header("Content-Type:text/html; charset=utf-8");
+            exit(json_encode($result, JSON_UNESCAPED_UNICODE));
+			
+        } else if (strtoupper($type) == 'XML') {
+            /* 返回xml格式数据 */
+            header("Content-Type:text/xml; charset=utf-8");
+            exit(\ez\tool\Xml::encode($result));
+          
+        } else if (strtoupper($type) == 'EVAL') {
+            /* 返回可执行的js脚本 */
+            header("Content-Type:text/html; charset=utf-8");
+            exit($data);
         }
     }
     

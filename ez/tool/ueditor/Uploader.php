@@ -1,5 +1,5 @@
 <?php
-namespace ez\tool;
+namespace ez\tool\ueditor;
 
 /**
  * Created by JetBrains PhpStorm.

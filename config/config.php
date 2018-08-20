@@ -10,17 +10,24 @@ return [
     
     /* 数据库配置 */
     'dbType'            => 'mysql',
-    'dbDistributede'    => 1,           // 0：单数据库、互为主从  1：主从读写分离
+    'dbDistributede'    => 0,           // 0：单数据库、互为主从  1：主从读写分离
     'dbPrefix'          => 'cmf_',      // 数据库表前缀
     'dbCharset'         => 'utf8',      // 数据库链接字符集
     
     /* 主数据库 */
     'dbMaster'          => [
+//        [
+//            'dbHost'            => '192.168.19.134',
+//            'dbName'            => 'test',
+//            'dbUser'            => 'root',
+//            'dbPassword'        => '123456',
+//            'dbPort'            => 3306,
+//        ],
         [
-            'dbHost'            => '192.168.19.134',
+            'dbHost'            => '127.0.0.1',
             'dbName'            => 'test',
             'dbUser'            => 'root',
-            'dbPassword'        => '123456',
+            'dbPassword'        => 'root',
             'dbPort'            => 3306,
         ],
     ],

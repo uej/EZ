@@ -1,15 +1,15 @@
 <?php
-namespace ez\tool;
+namespace ez\tool\ueditor;
 
 /**
  * Ueditor编辑器
  * 
  * @author lxj
  */
-class Ueditor 
+class Ueditor
 {
     /**
-     * 配置
+     * @var 配置
      */
     public $CONFIG;
     
@@ -24,7 +24,7 @@ class Ueditor
     {
         header("Content-Type: text/html; charset=utf-8");
 
-        $this->CONFIG = json_decode(preg_replace("/\/\*[\s\S]+?\*\//", "", file_get_contents("../config/ueditor.json")), true);
+        $this->CONFIG = json_decode(preg_replace("/\/\*[\s\S]+?\*\//", "", file_get_contents(SITE_PATH . '/../config/ueditor.json')), true);
         $action = $_GET['action'];
 
         switch ($action) {
@@ -268,7 +268,7 @@ class Ueditor
             if ($file != '.' && $file != '..') {
                 $path2 = $path . $file;
                 if (is_dir($path2)) {
-                    getfiles($path2, $allowFiles, $files);
+                    $this->getfiles($path2, $allowFiles, $files);
                 } else {
                     if (preg_match("/\.(".$allowFiles.")$/i", $file)) {
                         $files[] = array(
