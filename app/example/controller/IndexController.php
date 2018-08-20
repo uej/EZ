@@ -13,28 +13,7 @@ class IndexController extends Controller
 {
 
     public function index() {
-        echo (\ez\tool\Xml::encode([
-            'data'  => [
-                [
-                    'a',
-                    'b',
-                    'c'
-                ],
-                [
-                    'asdasd',
-                    'dddddd',
-                    'sssssss',
-                ]
-            ],
-            'info' => [
-                'name' => 'lxj',
-                'phone' => '173',
-            ],
-            'status' => 1,
-        ]));
-        
-        $xml = '<?xml version="1.0" encoding="utf-8"?><data><item id="0">a</item><item id="1">b</item><item id="2">c</item></data><data><item id="0">asdasd</item><item id="1">dddddd</item><item id="2">sssssss</item></data><info><name>lxj</name><phone>173</phone></info><status>1</status>';
-        dump(simplexml_load_string($xml));
+        $this->display();
     }
     
     public function add() {
@@ -106,5 +85,17 @@ class IndexController extends Controller
     
     public function uedtserv() {
         new \ez\tool\Ueditor();
+    }
+    
+    public function test() {
+        $text = "Message";
+        $key = md5($text);  //key的长度必须16，32位,这里直接MD5一个长度为32位的key
+        $iv='1234567812345678';
+        $crypttext = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $key, $text, MCRYPT_MODE_CBC, $iv);
+        $decode = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key, base64_decode('yMjizJCGQh+jxX4BXEtlNw=='), MCRYPT_MODE_CBC, $iv);
+        echo base64_encode($crypttext);
+        echo "<br/>";
+        echo $decode;
+        echo "<br/>";
     }
 }
