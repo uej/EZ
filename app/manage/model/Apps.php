@@ -1,5 +1,5 @@
 <?php
-namespace ez\business;
+namespace app\manage\model;
 use ez\core\Model;
 use ez\core\Log;
 

@@ -10,8 +10,10 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <script src="/js/CryptoJS/rollups/aes.js" type="text/javascript"></script>
-        <script src="/js/CryptoJS/components/pad-zeropadding-min.js" type="text/javascript"></script>
+        <script src="/js/CryptoJS/rollups/md5.js" type="text/javascript"></script>
+        <script src="/js/CryptoJS/rollups/sha1.js" type="text/javascript"></script>
+        <!--<script src="/js/CryptoJS/rollups/aes.js" type="text/javascript"></script>-->
+        <!--<script src="/js/CryptoJS/components/pad-zeropadding-min.js" type="text/javascript"></script>-->
         <!--<script src="/js/CryptoJS/components/aes-min.js" type="text/javascript"></script>-->
         <script>
             
@@ -57,12 +59,15 @@ and open the template in the editor.
             return decrypted.toString(CryptoJS.enc.Utf8);
         }
         
-        var key_hash = CryptoJS.MD5("Message");
-        var key = CryptoJS.enc.Utf8.parse(key_hash);
-        var iv  = CryptoJS.enc.Utf8.parse('1234567812345678');
-        var encrypted = CryptoJS.AES.encrypt("Message", key, { iv: iv,mode:CryptoJS.mode.CBC,padding:CryptoJS.pad.ZeroPadding});
-//        console.log(aesEncrypt.iv.toString(CryptoJS.enc.Hex));
-        console.log(encrypted.toString());
+        var key_hash = CryptoJS.MD5("是的1");
+        console.log(key_hash.toString());
+        var sha1_hash = CryptoJS.SHA1('是的1');
+        console.log(sha1_hash.toString());
+//        var key = CryptoJS.enc.Utf8.parse(key_hash);
+//        var iv  = CryptoJS.enc.Utf8.parse('1234567812345678');
+//        var encrypted = CryptoJS.AES.encrypt("Message", key, { iv: iv,mode:CryptoJS.mode.CBC,padding:CryptoJS.pad.ZeroPadding});
+////        console.log(aesEncrypt.iv.toString(CryptoJS.enc.Hex));
+//        console.log(encrypted.toString());
             
         </script>
     </body>

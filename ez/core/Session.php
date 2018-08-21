@@ -45,6 +45,9 @@ class Session
         
         if (is_string($key)) {
             $_SESSION[$key] = $value;
+            if ($value === NULL) {
+                unset($_SESSION[$key]);
+            }
             return TRUE;
         }
         
