@@ -18,6 +18,10 @@ class User extends Model
     /**
      * 登录
      * 
+     * @param string $account
+     * @param string $password
+     * @param array $salt
+     * @return string
      * @access public
      */
     public function login($account, $password, $salt)
