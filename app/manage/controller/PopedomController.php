@@ -77,8 +77,15 @@ class PopedomController extends Controller
         $password   = trim($_POST['password']);
         
         if (!empty($account) && !empty($password)) {
-            $user   = new \app\example\model\User();
+            $user   = new \app\manage\model\User();
             $res    = $user->login($account, $password, Session::get('loginSalt'));
+            Session::set('loginSalt', NULL);
+            if ($res['code'] == 1) {
+                Session::set('user', $res['userData']);
+                $this->ajaxReturn(\ez\core\Route::createUrl('index/index'), 1);
+            } else {
+                $this->ajaxReturn($res['msg'], 0);
+            }
         } else {
             $this->ajaxReturn('参数错误', 0);
         }

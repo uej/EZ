@@ -3,8 +3,9 @@ namespace app\manage\controller;
 use ez\core\Controller;
 use ez\core\Ez;
 use ez\core\Network;
-use ez\core\Route;
 use ez\core\Session;
+use app\manage\model\Apps;
+use app\manage\model\Menu;
 
 /**
  * 系统后台总控制器
@@ -35,7 +36,7 @@ class ManageController extends Controller
         $this->user = Session::get('user');
         
         if (empty($this->user['id'])) {
-            $this->redirect('manage/login/index');
+            $this->redirect('manage/popedom/index');
         }
         
         $this->checkAuth();
@@ -48,7 +49,20 @@ class ManageController extends Controller
      */
     protected function checkAuth()
     {
+        $nowActionId = Menu::get('id', [
+            'app'           => APP_NAME,
+            'controller'    => CONTROLLER_NAME,
+            'action'        => ACTION_NAME,
+        ]);
         
+        if (empty($nowActionId)) {
+            return;
+        }
+        if (in_array($nowActionId, explode(',', $this->user['role']['menuId']))) {
+            return;
+        } else {
+            $this->error('无权访问');
+        }
     }
     
     /**

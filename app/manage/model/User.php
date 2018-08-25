@@ -13,7 +13,7 @@ class User extends Model
     /**
      * @var string 表名
      */
-    public static $tableName = 'company_user';
+    public static $tableName = 'common_user';
     
     /**
      * 登录
@@ -37,13 +37,18 @@ class User extends Model
             return $result;
         }
         if ($userData['status'] != 1) {
-            $result['msg']  = '账号或密码错误';
+            $result['msg']  = '账号状态不正常，请联系管理员';
             return $result;
         }
         
         if (md5(md5($account . $userData['password']) . $salt['value']) == $password) {
             $result['code'] = 1;
             $result['msg']  = '登录成功';
+            
+            $userData['company']    = Company::get('*', ['id' => $userData['companyId']]);
+            $userData['role']       = Role::get(['name', 'menuId', 'apps'], ['id' => $userData['roleId']]);
+            $result['userData']     = $userData;
+            
             $this->update(['loginErrorTimes' => 0], ['id' => $userData['id']]);
         } else {
             $this->update(['loginErrorTimes[+]' => 1], ['id' => $userData['id']]);

@@ -95,9 +95,9 @@ class Route
         
         /* 控制器 */
         if (isset($param[1]) && !empty($param[1])) {
-            $this->controller = $param[1];
+            $this->controller = ucfirst($param[1]);
         } else {
-            $this->controller = Ez::config('defaultController');
+            $this->controller = ucfirst(Ez::config('defaultController'));
         }
         
         /* 方法 */

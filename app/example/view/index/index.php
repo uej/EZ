@@ -10,6 +10,7 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
+        js加密测试
         <script src="/js/CryptoJS/rollups/md5.js" type="text/javascript"></script>
         <script src="/js/CryptoJS/rollups/sha1.js" type="text/javascript"></script>
         <!--<script src="/js/CryptoJS/rollups/aes.js" type="text/javascript"></script>-->
