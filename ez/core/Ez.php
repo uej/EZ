@@ -83,6 +83,7 @@ class Ez
         if (!defined('__JS__'))     define('__JS__',     HTTPHOST.'/js');
         if (!defined('__IMG__'))    define('__IMG__',    HTTPHOST.'/images');
         if (!defined('__VIDEO__'))  define('__VIDEO__',  HTTPHOST.'/videos');
+        if (!defined('SITE_URL'))   define('SITE_URL',   HTTPHOST);
     }
     
     /**

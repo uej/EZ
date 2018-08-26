@@ -42,12 +42,16 @@ class User extends Model
         }
         
         if (md5(md5($account . $userData['password']) . $salt['value']) == $password) {
-            $result['code'] = 1;
-            $result['msg']  = '登录成功';
-            
             $userData['company']    = Company::get('*', ['id' => $userData['companyId']]);
+            if ($userData['company']['status'] != 1) {
+                $result['msg']  = '账号所属商户已停用';
+                return $result;
+            }
             $userData['role']       = Role::get(['name', 'menuId', 'apps'], ['id' => $userData['roleId']]);
             $result['userData']     = $userData;
+            
+            $result['code'] = 1;
+            $result['msg']  = '登录成功';
             
             $this->update(['loginErrorTimes' => 0], ['id' => $userData['id']]);
         } else {

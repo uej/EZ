@@ -42,7 +42,7 @@ class PopedomController extends Controller
         /* 检查验证码 */
         if (Ez::config('loginVerifyCode')) {
             $verify = new VerifyCode();
-            if (!$verify->check(filter_input(INPUT_POST, 'VerifyCode'), 'qcode')) {
+            if (!$verify->check(filter_input(INPUT_GET, 'verifyCode'), 'qcode')) {
                 $this->ajaxReturn('验证码不正确', 0);
             }
         }
@@ -62,7 +62,7 @@ class PopedomController extends Controller
      */
     public function verifyCode()
     {
-        $verify = new VerifyCode(['imageH' => 55, 'imageW' => 200, 'useZh' => 0, 'useCurve' => 0]);
+        $verify = new VerifyCode(['imageH' => 45, 'imageW' => 150, 'useZh' => 0, 'useCurve' => 0]);
         $verify->entry('qcode');
     }
     
