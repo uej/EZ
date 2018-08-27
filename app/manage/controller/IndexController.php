@@ -17,7 +17,7 @@ class IndexController extends ManageController {
     public function index() {
         /* 应用模块查询 */
         if ($this->user['roleId'] == 1) {
-            $apps   = Apps::select(['app', 'title', 'manageEntryUrl', 'logo', 'id'], ['status' => 1]);
+            $apps   = Apps::select(['app', 'title', 'manageEntryUrl', 'logo', 'id', 'logoColor'], ['status' => 1]);
             foreach ($apps as $key => $val) {
                 if (empty($val['manageEntryUrl'])) {
                     $menu   = Menu::get(['app', 'controller', 'action'], [
@@ -31,7 +31,7 @@ class IndexController extends ManageController {
                 }
             }
         } else {
-            $apps   = Apps::select(['app', 'title', 'manageEntryUrl', 'logo', 'id'], [
+            $apps   = Apps::select(['app', 'title', 'manageEntryUrl', 'logo', 'id', 'logoColor'], [
                 'id'    => explode(',', $this->user['company']['apps']),
                 'id'    => explode(',', $this->user['role']['apps']),
                 'ORDER' => ['sort' => 'ASC'],
