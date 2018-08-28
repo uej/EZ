@@ -15,9 +15,22 @@ class AppsController extends ManageController {
      * @access public
      */
     public function index() {
-        $apps   = new Apps();
-        $data   = $apps->findPage(10);
-        $this->display($data);
+        if (!$this->isAjax()) {
+            $this->render();
+        } else {
+            $apps   = new Apps();
+            
+            $limit  = intval($_GET['limit']);
+            $data   = $apps->findPage($limit);
+            $response   = [
+                'code'  => 0,
+                'msg'   => '',
+                'count' => $data['count'],
+                'data'  => $data['data'],
+            ];
+            
+            die(json_encode($response, JSON_UNESCAPED_UNICODE));
+        }
     }
     
     /**

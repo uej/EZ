@@ -14,5 +14,14 @@ class Menu extends Model {
      */
     public static $tableName = 'common_menu';
     
+    /**
+     * @var array 菜单功能类型
+     */
+    public $typeId  = [
+        1   => '顶部菜单',
+        2   => '单项数据操作',
+        3   => '菜单内按钮',
+    ];
+    
 }
 

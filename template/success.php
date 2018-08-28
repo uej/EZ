@@ -7,7 +7,11 @@
     <?php if($status == 0) { ?><title>失败</title><?php } ?>
     <base target="_self" />
     <script>
-        function Jump() { window.location.href = '<?=$jumpUrl?>'; }
+        function Jump() { 
+            window.event.chancelBUbble = true;
+            e.stopPropagation();
+            window.location.href = '<?=$jumpUrl?>';  
+        }
         document.onload = setTimeout("Jump()" , <?=$waitSecond?>* 1000);
     </script>
 </head>

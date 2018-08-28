@@ -40,6 +40,8 @@ class ManageController extends Controller
         }
         
         $this->checkAuth();
+        $this->getMenu();
+        $this->assign('verison', time());
     }
     
     /**
@@ -58,17 +60,62 @@ class ManageController extends Controller
         if (empty($nowActionId)) {
             return;
         }
+        if ($this->user['roleId'] == 1) {
+            return;
+        }
         if (in_array($nowActionId, explode(',', $this->user['role']['menuId']))) {
             return;
         } else {
             $this->error('无权访问');
         }
     }
-    
+
+    /**
+     * 菜单获取
+     * 
+     * @access protected
+     */
+    protected function getMenu()
+    {
+        /* 应用菜单列表 */
+        $app    = Apps::get(['id', 'title'], ['app' => APP_NAME]);
+        $menuWhere  = [
+            'appId'     => $app['id'],
+            'typeId'    => 1,
+            'ORDER'     => ['sort' => 'ASC'],
+        ];
+        if ($this->user['roleId'] != 1) {
+            $menuWhere['id']    = explode(',', $this->user['role']['menuId']);
+        }
+        $menus  = Menu::select('*', $menuWhere);
+        $this->assign('menus', $menus);
+        $this->assign('app', $app);
+        
+        /* 菜单内功能 */
+        $nowMenu    = Menu::get('id', ['app' => APP_NAME, 'controller' => CONTROLLER_NAME, 'action' => ACTION_NAME, 'typeId' => 1]);
+        if ($nowMenu) {
+            $where  = [
+                'parentId'  => $nowMenu,
+                'ORDER'     => ['sort' => 'ASC'],
+            ];
+            if ($this->user['roleId'] != 1) {
+                $where['id']    = explode(',', $this->user['role']['menuId']);
+            }
+            $dataMenuWhere  = $menuMenuWhere    = $where;
+            $dataMenuWhere['typeId']    = 2;
+            $menuMenuWhere['typeId']    = 3;
+            $dataMenu   = Menu::select('*', $dataMenuWhere);
+            $menuMenu   = Menu::select('*', $menuMenuWhere);
+            $this->assign('dataMenu', $dataMenu);
+            $this->assign('menuMenu', $menuMenu);
+        }
+    }
+
     /**
      * IP过滤
      *
      * @param array $ips 允许ip
+     * @access protected
      */
     protected static function _manageIpFilter($ips = [])
     {
@@ -84,5 +131,26 @@ class ManageController extends Controller
             header('Location: ' . HTTPHOST);
             exit;
         }
+    }
+    
+    /**
+     * 带公共部分的界面输出
+     * 
+     * @param string $view 模板路径
+     * @access public
+     */
+    public function render($view = '')
+    {
+        if (empty($view)) {
+            $view = ACTION_NAME;
+        }
+        if (is_file($view)) {
+            $layout = $view;
+        } else {
+            $layout = SITE_PATH . '/../' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . $view . '.php';
+        }
+        
+        $this->assign('manage_layout', $layout);
+        $this->display(SITE_PATH . '/../template/manage/layout.php');
     }
 }

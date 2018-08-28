@@ -83,7 +83,7 @@ class Controller
         if (is_array($view)) {
             $this->templateVariable = array_merge($this->templateVariable, $view);
             extract($this->templateVariable);
-            $template = SITE_PATH . '/../' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . strtolower(ACTION_NAME) . '.php';
+            $template = SITE_PATH . '/../' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . ACTION_NAME . '.php';
             if(!is_file($template)) {
                 throw new \Exception('template not exists');
             }
@@ -101,7 +101,7 @@ class Controller
             if (is_file($view)) {
                 include $view;
             } else {
-                $template = SITE_PATH . '/../' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . strtolower($view) . '.php';
+                $template = SITE_PATH . '/../' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . $view . '.php';
                 if (!is_file($template)) {
                     throw new \Exception('template not exists');
                 }
@@ -144,7 +144,7 @@ class Controller
             $this->assign('message', $msg);
             $this->assign('status', 1);
             $this->assign('waitSecond', $delay);
-            $this->display(__DIR__.'/../template/success.php');
+            $this->display(__DIR__.'/../../template/success.php');
             die;
         }
     }
@@ -159,13 +159,13 @@ class Controller
             $this->ajaxReturn($msg, 0);
         } else {
             if (!isset($this->templateVariable['jumpUrl'])) {
-                $this->assign('jumpUrl', "javascript:history.back(-1);");
+                $this->assign('jumpUrl', filter_input(INPUT_SERVER, 'HTTP_REFERER'));
             }
 
             $this->assign('message', $msg);
             $this->assign('status', 0);
             $this->assign('waitSecond', $delay);
-            $this->display(__DIR__.'/../template/success.php');
+            $this->display(__DIR__.'/../../template/success.php');
             die;
         }
     }
