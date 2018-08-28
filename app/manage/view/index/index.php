@@ -67,7 +67,7 @@
                 if (strpos($val['logo'], '/') !== FALSE) {
                     $icon   = "<img class='icon' src='". SITE_URL . $val['logo'] ."' />";
                 } else {
-                    $icon   = "<i class='fa ". $val['logo'] .' icon '. $val['logoColor'] ."'></i>";
+                    $icon   = "<i class='". $val['logo'] .' icon '. $val['logoColor'] ."'></i>";
                 }
                 $onclick    = empty($val['manageEntryUrl']) ? '' : "Win10.openUrl('".ez\core\Route::createUrl($val['manageEntryUrl'])."','".addslashes($icon)."{$val['title']}')";
             ?>
