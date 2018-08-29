@@ -52,6 +52,7 @@ class IndexController extends ManageController {
         }
         
         $this->assign('apps', $apps);
+        $this->assign('user', $this->user);
         $this->display();
     }
 }

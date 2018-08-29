@@ -81,6 +81,8 @@
     </div>
     <div id="win10-menu" class="hidden">
         <div class="list win10-menu-hidden animated animated-slideOutLeft">
+            <div class="item"><i class="blue icon fa fa-user-circle-o fa-fw"></i><?=$user['name']?></div>
+            <div class="sub-item" onclick="Win10.openUrl('<?=ez\core\Route::createUrl('changepwd')?>', '修改密码')">修改密码</div>
             <div class="item" onclick="Win10.aboutUs()"><i class="purple icon fa fa-info-circle fa-fw"></i>关于</div>
             <div class="item" onclick="layer.open({
                 title:'领红包',

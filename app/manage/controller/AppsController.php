@@ -1,6 +1,7 @@
 <?php
 namespace app\manage\controller;
 use app\manage\model\Apps;
+use app\manage\model\Menu;
 
 /**
  * 应用模块控制器
@@ -15,22 +16,10 @@ class AppsController extends ManageController {
      * @access public
      */
     public function index() {
-        if (!$this->isAjax()) {
-            $this->render();
-        } else {
-            $apps   = new Apps();
-            
-            $limit  = intval($_GET['limit']);
-            $data   = $apps->findPage($limit);
-            $response   = [
-                'code'  => 0,
-                'msg'   => '',
-                'count' => $data['count'],
-                'data'  => $data['data'],
-            ];
-            
-            die(json_encode($response, JSON_UNESCAPED_UNICODE));
-        }
+        $apps   = new Apps();
+        $data   = $apps->findPage(10);
+        $this->assign($data);
+        $this->render();
     }
     
     /**
@@ -78,6 +67,30 @@ class AppsController extends ManageController {
                 $this->error($apps->error);
             }
         }
+    }
+    
+    /**
+     * 应用菜单
+     * 
+     * @access public
+     */
+    public function menu() {
+        $menu   = new Menu();
+        
+        /* 搜索条件 */
+        $where  = [];
+        if (!empty($_GET['appId'])) {
+            $where['appId'] = intval($_GET['appId']);
+        }
+        if (!empty($_GET['typeId'])) {
+            $where['typeId']    = intval($_GET['typeId']);
+        }
+        
+        $data   = $apps->findPage(10);
+        
+        $this->assign('type', $menu->typeId);
+        $this->assign($data);
+        $this->render();
     }
     
 }

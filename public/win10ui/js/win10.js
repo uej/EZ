@@ -860,13 +860,12 @@ window.Win10 = {
             closeBtn: 1, //不显示关闭按钮
             anim: 2,
             skin: 'layui-layer-molv',
-            title: 'WIN10-UI '+this._version,
+            title: 'ezphp',
             shadeClose: true, //开启遮罩关闭
-            area: ['320px', '200px'], //宽高
+            area: ['320px', '150px'], //宽高
             content: '<div style="padding: 10px;font-size: 12px">' +
-            '<p>支持组件:layer、jquery、animated.css、font-awesome</p>' +
-            '<p>尤里2号©版权所有</p>' +
-            '<p>作者邮箱:yuri2peter@qq.com</p>' +
+            '<p>ezphp变异版</p>' +
+            '<p>支持：medoo、win10-ui、layui、jquery</p>' +
             '</div>'
         });
     },

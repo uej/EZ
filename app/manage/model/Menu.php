@@ -23,5 +23,14 @@ class Menu extends Model {
         3   => '菜单内按钮',
     ];
     
+    /**
+     * @var array 请求方式
+     */
+    public $requestType = [
+        1   => '当前页跳转',
+        2   => '新开iframe',
+        3   => 'ajax请求',
+    ];
+    
 }
 
