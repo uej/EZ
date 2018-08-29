@@ -29,9 +29,10 @@
             <td><?=$val['parentId']?></td>
             <td><?=app\manage\model\Apps::get('title', ['id' => $val['appId']])?></td>
             <td><?=date('Y-m-d H:i:s', $val['createTime'])?></td>
-            <td><?=$val['logo']?></td>
             <td><?=$val['sort']?></td>
-            <td><?=$val['status']?></td>
+            <td><?=$requestType[$val['requestType']]?></td>
+            <td><?=$val['askSure']?></td>
+            <td><?=$val['status']==1 ? '正常' : '关闭'?></td>
             <td>
                 <?php include SITE_PATH . '/../template/manage/dataHandle.php'; ?>
             </td>
@@ -39,9 +40,4 @@
         <?php } ?>
     </tbody>
 </table>
-<div>
-    
-</div>
-<?php include SITE_PATH . '/../template/manage/menuHandle.php'; ?>
-<?php include SITE_PATH . '/../template/manage/js.php'; ?>
 

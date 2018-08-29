@@ -86,11 +86,30 @@ class AppsController extends ManageController {
             $where['typeId']    = intval($_GET['typeId']);
         }
         
-        $data   = $apps->findPage(10);
+        $data   = $menu->findPage(10);
         
         $this->assign('type', $menu->typeId);
+        $this->assign('requestType', $menu->requestType);
         $this->assign($data);
         $this->render();
+    }
+    
+    /**
+     * 添加菜单
+     * 
+     * @access public
+     */
+    public function addMenu() {
+        if (empty($_POST)) {
+            $this->display();
+        } else {
+            $menu   = new Menu();
+            if ($menu->addMenu()) {
+                $this->success('添加成功');
+            } else {
+                $this->error($apps->error);
+            }
+        }
     }
     
 }

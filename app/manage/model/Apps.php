@@ -55,10 +55,6 @@ class Apps extends Model
      */
     public function editApp($data = []) {
         $data   = $this->create($data);
-        if (!preg_match('/^[a-z]{1}[a-z0-9]*$/', $data['app'])) {
-            $this->error    = '应用标识不正确，仅能包含小写字母及数字且小写字母开头';
-            return false;
-        }
         if (empty($data['title'])) {
             $this->error    = '应用标题不能为空';
             return false;

@@ -381,8 +381,8 @@ class Model
             }
             
             $html .= '<span class="turnto">转到</span>
-<input id="jump_page" class="textInput" value="" style="width:30px;" maxlength="10" type="text">
-<span class="turnto">页</span>
+<input id="jump_page" class="textInput" value="" maxlength="10" type="text">
+<span class="ye">页</span>
 <a href="javascript:void(0)" onclick="jumppage()">GO</a>
 <script>
     function jumppage() {

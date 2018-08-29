@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>编辑应用</title>
+    <title>添加应用</title>
     <link href="/layui/css/layui.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -11,8 +11,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">应用标识</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" value="<?=$data['app']?>" class="layui-input" style="width: 200px; border: none" disabled>
-                <input type="hidden" name="id" value="<?=$data['id']?>">
+                <input type="text" autocomplete="off" value="<?=$data['app']?>" class="layui-input" style="width: 200px;">
             </div>
         </div>
         <div class="layui-form-item">
@@ -78,7 +77,7 @@
         //监听提交
         form.on('submit(dosubmit)', function(data) {
             $.ajax({
-                url: "<?= ez\core\Route::createUrl('editApp')?>",
+                url: "<?= ez\core\Route::createUrl('addApp')?>",
                 data: data.field,
                 type: "post",
                 dataType: "json",

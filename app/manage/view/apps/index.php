@@ -26,16 +26,10 @@
             <td><?=$val['sort']?></td>
             <td><?=$val['status']?></td>
             <td>
+                <a href="<?=ez\core\Route::createUrl('apps/menu', ['appId' => $val['id']])?>" class="layui-btn layui-btn-xs">编辑菜单</a>
                 <?php include SITE_PATH . '/../template/manage/dataHandle.php'; ?>
             </td>
         </tr>
         <?php } ?>
     </tbody>
 </table>
-<div>
-    
-</div>
-<?php include SITE_PATH . '/../template/manage/menuHandle.php'; ?>
-<?php include SITE_PATH . '/../template/manage/js.php'; ?>
-
-
