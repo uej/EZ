@@ -274,13 +274,13 @@ class Model
      * 分页查找
      * 
      * @param int $page 每页展示条数
+     * @param array $where 查询条件
      * @param int $max 最多展示页数
      * @param mixed $columns 查询字段
-     * @param array $where 查询条件
      * @param mixed $join 连表查询设置
      * @return array 数据结果  [ 'data'=>数据数组, 'pages'=>总页数, 'count'=>数据总条数, 'html'=>分页html代码 ]
      */
-    public function findPage($page = 10, $max = 9, $columns = '*', $where = null, $join = null)
+    public function findPage($page = 10, $where = null, $max = 9, $columns = '*', $join = null)
     {
         /* 总数，页数计算 */
         $p      = !empty($_GET['p']) ? intval(filter_input(INPUT_GET, 'p')) : 1;

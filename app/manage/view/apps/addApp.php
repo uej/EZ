@@ -11,44 +11,50 @@
         <div class="layui-form-item">
             <label class="layui-form-label">应用标识</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" value="<?=$data['app']?>" class="layui-input" style="width: 200px;">
+                <input type="text" autocomplete="off" name="app" class="layui-input" style="width: 200px;">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">应用标题</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" value="<?=$data['title']?>" name="title" class="layui-input" style="width: 200px;">
+                <input type="text" autocomplete="off" name="title" class="layui-input" style="width: 200px;">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">前台路由</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" value="<?=$data['entryUrl']?>" lay-verify="pathinfo" name="entryUrl" class="layui-input" style="width: 200px;">
+                <input type="text" autocomplete="off" lay-verify="pathinfo" name="entryUrl" class="layui-input" style="width: 200px;">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">后台路由</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" value="<?=$data['manageEntryUrl']?>" lay-verify="pathinfo" name="manageEntryUrl" class="layui-input" style="width: 200px;">
+                <input type="text" autocomplete="off" lay-verify="pathinfo" name="manageEntryUrl" class="layui-input" style="width: 200px;">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">logo图标</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" value="<?=$data['logo']?>" name="logo" lay-verify="logo" class="layui-input" style="width: 200px;">
+                <input type="text" autocomplete="off" name="logo" lay-verify="logo" class="layui-input" style="width: 200px;">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">logo底色</label>
+            <div class="layui-input-block">
+                <input type="text" autocomplete="off" name="logoColor" lay-verify="logoColor" class="layui-input" style="width: 200px;">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">排序</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" value="<?=$data['sort']?>" name="sort" lay-verify="number" class="layui-input" style="width: 200px;">
+                <input type="text" autocomplete="off" name="sort" lay-verify="number" class="layui-input" style="width: 200px;">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">状态</label>
             <div class="layui-input-block">
-                <input type="radio" name="status" value="1" title="开启" <?php if($data['status'] == 1) echo 'checked'; ?>>
-                <input type="radio" name="status" value="0" title="关闭" <?php if($data['status'] == 0) echo 'checked'; ?>>
+                <input type="radio" name="status" value="1" title="开启">
+                <input type="radio" name="status" value="0" title="关闭">
             </div>
         </div>
         <div class="layui-form-item">
@@ -71,7 +77,11 @@
             logo: [
                 /^[_a-zA-Z\.\/\-\s\d]+$/
                 ,'logo格式不正确'
-            ]
+            ],
+            logoColor: [
+                /^[_a-zA-Z0-9\/]*$/
+                ,'logo底色格式不正确'
+            ],
         });  
         
         //监听提交

@@ -70,6 +70,21 @@ class AppsController extends ManageController {
     }
     
     /**
+     * app删除
+     * 
+     * @access public
+     */
+    public function delApp() {
+        $id = intval($_GET['id']);
+        $result = Apps::delete(['id' => $id]);
+        if ($result->errorCode() === '00000') {
+            $this->success("删除成功");
+        } else {
+            $this->error("删除失败");
+        }
+    }
+    
+    /**
      * 应用菜单
      * 
      * @access public
@@ -86,8 +101,7 @@ class AppsController extends ManageController {
             $where['typeId']    = intval($_GET['typeId']);
         }
         
-        $data   = $menu->findPage(10);
-        
+        $data   = $menu->findPage(10, $where);
         $this->assign('type', $menu->typeId);
         $this->assign('requestType', $menu->requestType);
         $this->assign($data);
@@ -100,10 +114,12 @@ class AppsController extends ManageController {
      * @access public
      */
     public function addMenu() {
+        $menu   = new Menu();
+        
         if (empty($_POST)) {
+            $this->assign('menu', $menu);
             $this->display();
         } else {
-            $menu   = new Menu();
             if ($menu->addMenu()) {
                 $this->success('添加成功');
             } else {
