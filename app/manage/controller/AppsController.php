@@ -118,13 +118,54 @@ class AppsController extends ManageController {
         
         if (empty($_POST)) {
             $this->assign('menu', $menu);
+            $this->assign('apps', Apps::select(['id', 'title'], ['status' => 1]));
             $this->display();
         } else {
             if ($menu->addMenu()) {
                 $this->success('添加成功');
             } else {
-                $this->error($apps->error);
+                $this->error($menu->error);
             }
+        }
+    }
+    
+    /**
+     * 编辑菜单
+     * 
+     * @access public
+     */
+    public function editMenu() {
+        $menu   = new Menu();
+        
+        if (empty($_POST)) {
+            $id = intval($_GET['id']);
+            $data   = $menu->get('*', ['id' => $id]);
+            $this->assign('menu', $menu);
+            $this->assign('apps', Apps::select(['id', 'title'], ['status' => 1]));
+            $this->assign('data', $data);
+            $this->assign('parents', $menu->select(['id', 'title'], ['status' => 1, 'appId' => $data['appId']]));
+            $this->display();
+        } else {
+            if ($menu->editMenu()) {
+                $this->success('编辑成功');
+            } else {
+                $this->error($menu->error);
+            }
+        }
+    }
+    
+    /**
+     * 获取应用菜单
+     * 
+     * @access public
+     */
+    public function getMenuByAppId() {
+        $id = intval($_GET['id']);
+        if ($id) {
+            $data   = Menu::select(['id', 'title'], ['appId' => $id, 'status' => 1]);
+            $this->ajaxReturn('获取成功', 1, $data);
+        } else {
+            $this->ajaxReturn('参数错误', 0);
         }
     }
     

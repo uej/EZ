@@ -11,13 +11,13 @@
         <div class="layui-form-item">
             <label class="layui-form-label">应用标识</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" name="app" class="layui-input" style="width: 200px;">
+                <input type="text" autocomplete="off" name="app" lay-verify="required" class="layui-input" style="width: 200px;">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">应用标题</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" name="title" class="layui-input" style="width: 200px;">
+                <input type="text" autocomplete="off" name="title" lay-verify="required" class="layui-input" style="width: 200px;">
             </div>
         </div>
         <div class="layui-form-item">
@@ -53,8 +53,8 @@
         <div class="layui-form-item">
             <label class="layui-form-label">状态</label>
             <div class="layui-input-block">
-                <input type="radio" name="status" value="1" title="开启">
-                <input type="radio" name="status" value="0" title="关闭">
+                <input type="radio" name="status" value="1" title="开启" lay-verify="required">
+                <input type="radio" name="status" value="0" title="关闭" lay-verify="required">
             </div>
         </div>
         <div class="layui-form-item">
@@ -102,7 +102,7 @@
                     }
                 },
                 error: function() {
-                    layer.alert('系统错误', {icon: 0});
+                    layer.alert('页面超时，请刷新重试', {icon: 0});
                 }
             });
             return false;

@@ -98,4 +98,10 @@ class IndexController extends Controller
         echo $decode;
         echo "<br/>";
     }
+    
+    public function show() {
+        dump(APP_NAME);
+        dump(CONTROLLER_NAME);
+        dump(ACTION_NAME);
+    }
 }
