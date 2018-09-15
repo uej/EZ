@@ -52,7 +52,6 @@
                         });
                     } else {
                         requestDo(url, handleTitle, requestType);
-
                     }
                 }
 
@@ -70,7 +69,7 @@
                                 location.reload();
                             }
                         });
-                    } else if (requestType == 2) {
+                    } else if (requestType == 3) {
                         $.ajax({
                             url: url,
                             type: "get",

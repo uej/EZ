@@ -26,7 +26,7 @@
             <td><?=$val['sort']?></td>
             <td><?=$val['status']?></td>
             <td>
-                <a href="<?=ez\core\Route::createUrl('apps/menu', ['appId' => $val['id']])?>" class="layui-btn layui-btn-xs">编辑菜单</a>
+                <a href="<?=ez\core\Route::createUrl('company/user', ['appId' => $val['id']])?>" class="layui-btn layui-btn-xs">功能菜单</a>
                 <?php include SITE_PATH . '/../template/manage/dataHandle.php'; ?>
             </td>
         </tr>

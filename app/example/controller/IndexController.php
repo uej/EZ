@@ -14,6 +14,7 @@ class IndexController extends Controller
 
     public function index() {
         $this->display();
+        dump(\ez\core\Session::get('user'));
     }
     
     public function add() {

@@ -14,4 +14,16 @@ class Company extends Model {
      */
     public static $tableName = 'common_company';
     
+    
+    /**
+     * 添加商户
+     * 
+     * @access public
+     */
+    public function addCompany($data = []) {
+        $data   = $this->create($data);
+        $data['createTime'] = time();
+        
+        
+    }
 }
