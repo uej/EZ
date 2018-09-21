@@ -53,6 +53,7 @@ class CompanyController extends ManageController {
                 $this->error('请选择应用模块');
             }
             $data['createUserId']   = $this->user['id'];
+            $data['apps']   = implode(',', $data['apps']);
             
             if ($company->insert($data)->errorCode() === '00000') {
                 $this->success('添加成功');
@@ -70,9 +71,41 @@ class CompanyController extends ManageController {
     public function editCompany() {
         if (empty($_POST)) {
             $id = intval($_GET['id']);
+            if ($id > 0) {
+                $data   = Company::get('*', ['id' => $id]);
+                $this->assign('data', $data);
+                $this->display();
+            }
+        } else {
+            $company    = new Company();
+            $data   = $this->create();
+            $id = intval($data['id']);
+            
+            if ($id <= 0) {
+                $this->error('参数错误');
+            }
+            if (empty($data['name'])) {
+                $this->error('商户名称不能为空');
+            }
+            if (empty($data['contact'])) {
+                $this->error('商户联系人不能为空');
+            }
+            if (empty($data['phone'])) {
+                $this->error('商户联系电话不能为空');
+            }
+            if (empty($data['apps'])) {
+                $this->error('请选择应用模块');
+            }
+            $data['modifyUserId']   = $this->user['id'];
+            $data['apps']   = implode(',', $data['apps']);
+            
+            if ($company->update($data, ['id' => $id])->errorCode() === '00000') {
+                $this->success('编辑成功');
+            } else {
+                $this->error($company->error);
+            }
         }
     }
-    
     
 }
 
