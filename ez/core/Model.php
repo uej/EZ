@@ -428,7 +428,11 @@ class Model
         }
         foreach ($data as $key => $val) {
             if (in_array($key, $keys)) {
-                $arr[$key] = trim($val);
+                if (is_array($val)) {
+                    $arr[$key] = $val;
+                } else {
+                    $arr[$key] = trim($val);
+                }
             }
         }
         

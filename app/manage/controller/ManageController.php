@@ -88,8 +88,8 @@ class ManageController extends Controller
             $menuWhere['id']    = explode(',', $this->user['role']['menuId']);
         }
         $menus  = Menu::select('*', $menuWhere);
-        $this->assign('menus', $menus);
-        $this->assign('app', $app);
+        $this->assign('tpl_manage_menus', $menus);
+        $this->assign('tpl_manage_app', $app);
         
         /* 菜单内功能 */
         $nowMenu    = Menu::get('id', ['app' => APP_NAME, 'controller' => CONTROLLER_NAME, 'action' => ACTION_NAME, 'typeId' => 1]);
@@ -106,8 +106,8 @@ class ManageController extends Controller
             $menuMenuWhere['typeId']    = 3;
             $dataMenu   = Menu::select('*', $dataMenuWhere);
             $menuMenu   = Menu::select('*', $menuMenuWhere);
-            $this->assign('dataMenu', $dataMenu);
-            $this->assign('menuMenu', $menuMenu);
+            $this->assign('tpl_manage_dataMenu', $dataMenu);
+            $this->assign('tpl_manage_menuMenu', $menuMenu);
         }
     }
 
@@ -150,7 +150,7 @@ class ManageController extends Controller
             $layout = SITE_PATH . '/../' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . $view . '.php';
         }
         
-        $this->assign('manage_layout', $layout);
+        $this->assign('tpl_manage_layout', $layout);
         $this->display(SITE_PATH . '/../template/manage/layout.php');
     }
 }

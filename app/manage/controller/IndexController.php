@@ -1,6 +1,7 @@
 <?php
 namespace app\manage\controller;
 use app\manage\model\Apps;
+use app\manage\model\Menu;
 
 /**
  * 后台首页
@@ -37,16 +38,14 @@ class IndexController extends ManageController {
                 'ORDER' => ['sort' => 'ASC'],
             ]);
             foreach ($apps as $key => $val) {
-                if (empty($val['manageEntryUrl'])) {
-                    $menu   = Menu::get(['app', 'controller', 'action'], [
-                        'appId' => $val['id'],
-                        'typeId'=> 1,
-                        'id'    => explode(',', $this->user['role']['menuId']),
-                        'ORDER' => ['sort' => 'ASC'],
-                    ]);
-                    if (!empty($menu)) {
-                        $apps[$key]['manageEntryUrl']   = "{$menu['app']}/{$menu['controller']}/{$menu['action']}";
-                    }
+                $menu   = Menu::get(['app', 'controller', 'action'], [
+                    'appId' => $val['id'],
+                    'typeId'=> 1,
+                    'id'    => explode(',', $this->user['role']['menuId']),
+                    'ORDER' => ['sort' => 'ASC'],
+                ]);
+                if (!empty($menu)) {
+                    $apps[$key]['manageEntryUrl']   = "{$menu['app']}/{$menu['controller']}/{$menu['action']}";
                 }
             }
         }

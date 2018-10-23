@@ -16,8 +16,19 @@ class AppsController extends ManageController {
      * @access public
      */
     public function index() {
+        $key    = trim(filter_input(INPUT_GET, 'key'));
+        $where  = NULL;
+        if (!empty($key)) {
+            $where  = [
+                'OR'    => [
+                    'app'   => $key,
+                    'title[~]' => $key,
+                ]
+            ];
+        }
+        
         $apps   = new Apps();
-        $data   = $apps->findPage(10);
+        $data   = $apps->findPage(10, $where);
         $this->assign($data);
         $this->render();
     }

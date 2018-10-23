@@ -1,5 +1,5 @@
 <?php 
-foreach ($dataMenu as $template_handle) {
+foreach ($tpl_manage_dataMenu as $template_handle) {
     $template_key   = empty($template_handle['param']) ? 'id' : $template_handle['param'];
     $template_val   = empty($template_handle['field']) ? $val['id'] : $val[$template_handle['field']];
 ?>

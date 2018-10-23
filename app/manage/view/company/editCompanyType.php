@@ -3,33 +3,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>添加商户</title>
+    <title>编辑商户类型</title>
     <link href="/layui/css/layui.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <div class="layui-form" style="margin-top: 20px;">
         <div class="layui-form-item">
-            <label class="layui-form-label">商户名称</label>
+            <label class="layui-form-label">类型名称</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" name="name" class="layui-input" lay-verify="required" style="width: 300px;">
+                <input type="text" autocomplete="off" name="name" value="<?=$data['name']?>" class="layui-input" lay-verify="required" style="width: 300px;">
+                <input type="hidden" name="id" value="<?=$data['id']?>">
             </div>
         </div>
         <div class="layui-form-item">
-            <label class="layui-form-label">联系人</label>
-            <div class="layui-input-block" style="width: 300px;">
-                <input type="text" autocomplete="off" name="contact" class="layui-input" lay-verify="required" style="width: 300px;">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">联系电话</label>
-            <div class="layui-input-block" style="width: 300px;">
-                <input type="text" autocomplete="off" name="phone" class="layui-input" lay-verify="required|phone" style="width: 300px;">
-            </div>
-        </div>
-        <div class="layui-form-item">
-            <label class="layui-form-label">联系地址</label>
-            <div class="layui-input-block" style="width: 300px;">
-                <input type="text" autocomplete="off" name="address" class="layui-input" style="width: 300px;">
+            <label class="layui-form-label">可用应用</label>
+            <div class="layui-input-block" style="">
+                <?php
+                $dataApps   = explode(',', $data['apps']);
+                foreach ($apps as $val) { ?>
+                <input type="checkbox" name="apps[]" title="<?=$val['title']?>" value="<?=$val['id']?>" <?php if (in_array($val['id'], $dataApps)) echo 'checked'; ?>>
+                <?php } ?>
             </div>
         </div>
         <div class="layui-form-item">
@@ -46,12 +39,12 @@
         //监听提交
         form.on('submit(dosubmit)', function(data) {
             $.ajax({
-                url: "<?= ez\core\Route::createUrl('addCompany')?>",
+                url: "<?= ez\core\Route::createUrl('editCompanyType')?>",
                 data: data.field,
                 type: "post",
                 dataType: "json",
                 success: function(res) {
-                    if(res.status == 1) {
+                    if (res.status == 1) {
                         layer.alert(res.info, {icon: 1}, function() {
                             var index = parent.layer.getFrameIndex(window.name); 
                             parent.layer.close(index);
@@ -69,3 +62,4 @@
     </script>
 </body>
 </html>
+

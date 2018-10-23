@@ -13,7 +13,7 @@ class Apps extends Model
     /**
      * @var string 表名
      */
-    public static $tableName = 'common_apps';
+    public static $tableName = 'manage_apps';
     
     
     /**

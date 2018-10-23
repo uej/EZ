@@ -1,3 +1,9 @@
+<form action="<?=ez\core\Route::createUrl('index')?>" method="get">
+    关键字：<div class="layui-inline">
+        <input class="layui-input" name="key" value="<?=htmlspecialchars(trim($_GET['key']))?>" id="demoReload" autocomplete="off">
+    </div>
+    <input type="submit" class="layui-btn" value="搜索">
+</form>
 <table class="layui-table">
     <thead>
         <tr>

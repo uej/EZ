@@ -42,7 +42,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">logo底色</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" value="<?=$data['logo']?>" name="logoColor" class="layui-input" style="width: 200px;">
+                <input type="text" autocomplete="off" value="<?=$data['logoColor']?>" name="logoColor" class="layui-input" style="width: 200px;">
             </div>
         </div>
         <div class="layui-form-item">

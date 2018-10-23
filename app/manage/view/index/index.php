@@ -92,7 +92,7 @@
                 shadeClose:true,
                 content: '<img width=\'300\' src=\'/win10ui/img/presentation/hongbao.jpg\' />'
             })"><i class="red icon fa fa-envelope fa-fw"></i>领红包</div>
-            <div class="item" onclick="Win10.exit();"><i class="black icon fa fa-power-off fa-fw"></i>退出</div>
+            <div class="item" onclick="Win10.exit('<?=ez\core\Route::createUrl('manage/popedom/logout')?>');"><i class="black icon fa fa-power-off fa-fw"></i>退出</div>
         </div>
         <div class="blocks">
             <div class="menu_group">

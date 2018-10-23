@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>添加商户</title>
+    <title>编辑商户</title>
     <link href="/layui/css/layui.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -11,25 +11,26 @@
         <div class="layui-form-item">
             <label class="layui-form-label">商户名称</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" name="name" class="layui-input" lay-verify="required" style="width: 300px;">
+                <input type="text" autocomplete="off" name="name" class="layui-input" value="<?=$data['name']?>" lay-verify="required" style="width: 300px;">
+                <input type="hidden" name="id" value="<?=$data['id']?>">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">联系人</label>
             <div class="layui-input-block" style="width: 300px;">
-                <input type="text" autocomplete="off" name="contact" class="layui-input" lay-verify="required" style="width: 300px;">
+                <input type="text" autocomplete="off" name="contact" class="layui-input" value="<?=$data['contact']?>" lay-verify="required" style="width: 300px;">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">联系电话</label>
             <div class="layui-input-block" style="width: 300px;">
-                <input type="text" autocomplete="off" name="phone" class="layui-input" lay-verify="required|phone" style="width: 300px;">
+                <input type="text" autocomplete="off" name="phone" class="layui-input" value="<?=$data['phone']?>" lay-verify="required|phone" style="width: 300px;">
             </div>
         </div>
         <div class="layui-form-item">
             <label class="layui-form-label">联系地址</label>
             <div class="layui-input-block" style="width: 300px;">
-                <input type="text" autocomplete="off" name="address" class="layui-input" style="width: 300px;">
+                <input type="text" autocomplete="off" name="address" value="<?=$data['address']?>" class="layui-input" style="width: 300px;">
             </div>
         </div>
         <div class="layui-form-item">
@@ -43,10 +44,10 @@
     <script>
         var form = layui.form;
         
-        //监听提交
+        // 监听提交
         form.on('submit(dosubmit)', function(data) {
             $.ajax({
-                url: "<?= ez\core\Route::createUrl('addCompany')?>",
+                url: "<?= ez\core\Route::createUrl('editCompany')?>",
                 data: data.field,
                 type: "post",
                 dataType: "json",

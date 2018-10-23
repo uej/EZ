@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title><?=$app['title']?></title>
+    <title><?=$tpl_manage_app['title']?></title>
     <link href="/layui/css/layui.css" rel="stylesheet" type="text/css"/>
     <style>
         .pages { width: 100%; height: 38px; }
@@ -21,16 +21,16 @@
 <body>
     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
         <ul class="layui-tab-title">
-            <?php foreach ($menus as $val) { ?>
+            <?php foreach ($tpl_manage_menus as $val) { ?>
             <li <?php if(CONTROLLER_NAME == ucfirst($val['controller']) && ACTION_NAME == $val['action']) echo 'class="layui-this"'; ?> onclick="location.href='<?=ez\core\Route::createUrl("{$val['controller']}/{$val['action']}")?>'"><?=$val['title']?></li>
             <?php } ?>
         </ul>
         <div class="layui-tab-content">
             <script src="/win10ui/js/jquery-2.2.4.min.js" type="text/javascript"></script>
             <script src="/layui/layui.all.js" type="text/javascript"></script>
-            <?php include $manage_layout; ?>
+            <?php include $tpl_manage_layout; ?>
             <div class="pages">
-                <?php foreach ($menuMenu as $handle) { ?>
+                <?php foreach ($tpl_manage_menuMenu as $handle) { ?>
                 <a href="javascript:handleDo('<?=ez\core\Route::createUrl("{$handle['app']}/{$handle['controller']}/{$handle['action']}")?>', <?=$handle['askSure']?>, '<?=$handle['title']?>', <?=$handle['requestType']?>)" class="<?=$handle['className']?>"><?=$handle['title']?></a>
                 <?php } ?>
                 <div class="page"><?=$html?></div>

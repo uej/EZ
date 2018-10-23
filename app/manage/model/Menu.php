@@ -12,7 +12,7 @@ class Menu extends Model {
     /**
      * @var string 表名
      */
-    public static $tableName = 'common_menu';
+    public static $tableName = 'manage_menu';
     
     /**
      * @var array 菜单功能类型

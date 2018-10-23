@@ -91,5 +91,14 @@ class PopedomController extends Controller
         }
     }
     
+    /**
+     * 登出
+     * 
+     * @access public
+     */
+    public function logout() {
+        $_SESSION   = [];
+        $this->redirect('login');
+    }
     
 }

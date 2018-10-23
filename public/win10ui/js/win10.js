@@ -837,10 +837,10 @@ window.Win10 = {
         this._animated_classes=animated_classes;
         this._animated_liveness=animated_liveness;
     },
-    exit:function () {
+    exit:function (logouturl) {
         layer.confirm(Win10.lang('确认要关闭本页吗?','Are you sure you want to close this page?'), {icon: 3, title:Win10.lang('提示','Prompt')}, function(index){
             document.body.onbeforeunload = function(){};
-            window.location.href="about:blank";
+            window.location.href=logouturl;
             window.close();
             layer.close(index);
             layer.alert(Win10.lang('哎呀,好像失败了呢。','Ops...There seems to be a little problem.'), {
