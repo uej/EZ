@@ -2,6 +2,7 @@
 use app\manage\model\Company;
 use app\manage\model\Role;
 ?>
+
 <table class="layui-table">
     <thead>
         <tr>

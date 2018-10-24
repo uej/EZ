@@ -87,7 +87,13 @@ class AppsController extends ManageController {
      */
     public function delApp() {
         $id = intval($_GET['id']);
-        $result = Apps::delete(['id' => $id]);
+        
+        /* 删除验证 */
+        if (Menu::has(['appId' => $id, 'status' => 1])) {
+            $this->error("该应用还有正常功能或菜单，不能删除");
+        }
+        
+        $result = Apps::update(['status' => 0], ['id' => $id]);
         if ($result->errorCode() === '00000') {
             $this->success("删除成功");
         } else {
@@ -105,11 +111,15 @@ class AppsController extends ManageController {
         
         /* 搜索条件 */
         $where  = [];
+        $key    = trim(filter_input(INPUT_GET, 'key'));
         if (!empty($_GET['appId'])) {
             $where['appId'] = intval($_GET['appId']);
         }
         if (!empty($_GET['typeId'])) {
             $where['typeId']    = intval($_GET['typeId']);
+        }
+        if (!empty($key)) {
+            $where['title[~]']  = $key;
         }
         
         $data   = $menu->findPage(10, $where);

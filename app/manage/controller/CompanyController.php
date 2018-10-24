@@ -17,8 +17,18 @@ class CompanyController extends ManageController {
      * @access public
      */
     public function index() {
+        $key    = trim(filter_input(INPUT_GET, 'key'));
+        $where  = NULL;
+        if (!empty($key)) {
+            $where  = [
+                'OR'    => [
+                    'name[~]' => $key,
+                ]
+            ];
+        }
+        
         $company    = new Company();
-        $data       = $company->findPage(10);
+        $data       = $company->findPage(10, $where);
         $this->assign($data);
         $this->render();
     }

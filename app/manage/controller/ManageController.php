@@ -83,6 +83,7 @@ class ManageController extends Controller
             'appId'     => $app['id'],
             'typeId'    => 1,
             'ORDER'     => ['sort' => 'ASC'],
+            'status'    => 1,
         ];
         if ($this->user['roleId'] != 1) {
             $menuWhere['id']    = explode(',', $this->user['role']['menuId']);
@@ -97,6 +98,7 @@ class ManageController extends Controller
             $where  = [
                 'parentId'  => $nowMenu,
                 'ORDER'     => ['sort' => 'ASC'],
+                'status'    => 1,
             ];
             if ($this->user['roleId'] != 1) {
                 $where['id']    = explode(',', $this->user['role']['menuId']);

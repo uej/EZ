@@ -19,9 +19,25 @@ class UserController extends ManageController {
      * @access public
      */
     public function index() {
+        $key    = trim(filter_input(INPUT_GET, 'key'));
+        $companyId  = intval($_GET['companyId']);
+        $where  = NULL;
+        if (!empty($key)) {
+            $where['OR']    = [
+                'account'   => $key,
+                'name[~]'   => $key,
+                'phone'     => $key,
+            ];
+        }
+        if (!empty($companyId)) {
+            $where['companyId'] = $companyId;
+        }
+        
         $user   = new User();
-        $data   = $user->findPage(10);
+        $data   = $user->findPage(10, $where);
+        $this->assign('company', Company::select(['id', 'name']));
         $this->assign($data);
+        $this->assign('user', $this->user);
         $this->render();
     }
     
