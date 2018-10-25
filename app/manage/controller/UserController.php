@@ -112,13 +112,26 @@ class UserController extends ManageController {
      */
     public function role() {
         $role   = new Role();
-        if ($this->user['companyId'] == 1) {
-            $data   = $role->findPage(10);
-        } else {
-            $data   = $role->findPage(10, [
-                'companyId' => [$this->user['companyId'], 0],
-            ]);
+        $companyId  = intval($_GET['companyId']);
+        $key    = trim(filter_input(INPUT_GET, 'key'));
+        $where  = NULL;
+        if (!empty($key)) {
+            $where['OR']    = [
+                'name[~]'   => $key,
+            ];
         }
+        if (!empty($companyId) && $this->user['companyId'] == 1) {
+            $where['companyId'] = $companyId;
+        }
+        
+        if ($this->user['companyId'] == 1) {
+            $data   = $role->findPage(10, $where);
+        } else {
+            $where['companyId'] = [$this->user['companyId'], 0];
+            $data   = $role->findPage(10, $where);
+        }
+        $this->assign('company', Company::select(['id', 'name']));
+        $this->assign('user', $this->user);
         $this->assign($data);
         $this->render();
     }
