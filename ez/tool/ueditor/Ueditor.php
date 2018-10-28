@@ -24,7 +24,7 @@ class Ueditor
     {
         header("Content-Type: text/html; charset=utf-8");
 
-        $this->CONFIG = json_decode(preg_replace("/\/\*[\s\S]+?\*\//", "", file_get_contents(SITE_PATH . '/../config/ueditor.json')), true);
+        $this->CONFIG = json_decode(preg_replace("/\/\*[\s\S]+?\*\//", "", file_get_contents(SITE_PATH . '/config/ueditor.json')), true);
         $action = $_GET['action'];
 
         switch ($action) {

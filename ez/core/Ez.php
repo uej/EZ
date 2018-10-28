@@ -27,7 +27,7 @@ class Ez
                 if (false !== strpos($classname, '\\')) {
 
                     /* 定位路径 */
-                    $filename = SITE_PATH . '/../../' . str_replace('\\', '/', $classname . '.php');
+                    $filename = SITE_PATH . '/' . str_replace('\\', '/', $classname . '.php');
 
                     /* 引入文件 */
                     if (is_file($filename)) {
@@ -79,11 +79,12 @@ class Ez
                 define('HTTPHOST', $http.filter_input(INPUT_SERVER, 'SERVER_NAME').':'.filter_input(INPUT_SERVER, 'SERVER_PORT'));
             }
         }
+        if (!defined('SITE_URL'))   define('SITE_URL',   HTTPHOST);
         if (!defined('__CSS__'))    define('__CSS__',    HTTPHOST.'/css');
         if (!defined('__JS__'))     define('__JS__',     HTTPHOST.'/js');
         if (!defined('__IMG__'))    define('__IMG__',    HTTPHOST.'/images');
         if (!defined('__VIDEO__'))  define('__VIDEO__',  HTTPHOST.'/videos');
-        if (!defined('SITE_URL'))   define('SITE_URL',   HTTPHOST);
+        
     }
     
     /**

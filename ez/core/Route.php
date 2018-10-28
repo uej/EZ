@@ -46,13 +46,13 @@ class Route
      * @access private
      */
     private function loadApp() {
-        $funcPath   = SITE_PATH . '/../' . APP_PATH_NAME . '/' . APP_NAME . '/function.php';
+        $funcPath   = SITE_PATH . '/' . APP_PATH_NAME . '/' . APP_NAME . '/function.php';
         if (is_file($funcPath)) {
             include $funcPath;
         }
         
         global $_config;
-        $configPath = SITE_PATH . '/../' . APP_PATH_NAME . '/' . APP_NAME . '/config.php';
+        $configPath = SITE_PATH . '/' . APP_PATH_NAME . '/' . APP_NAME . '/config.php';
         if (is_file($configPath)) {
             $config = include $configPath;
             foreach ($config as $key => $val) {

@@ -34,7 +34,7 @@ use app\manage\model\Company;
             <td><?=$val['status']?></td>
             <td>
                 <a href="<?=ez\core\Route::createUrl('user/index', ['companyId' => $val['id']])?>" class="layui-btn layui-btn-xs">商户用户</a>
-                <?php include SITE_PATH . '/../template/manage/dataHandle.php'; ?>
+                <?php include SITE_PATH . '/template/manage/dataHandle.php'; ?>
             </td>
         </tr>
         <?php } ?>

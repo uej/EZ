@@ -52,7 +52,7 @@ use app\manage\model\Role;
             <td><?=date('Y-m-d H:i:s', $val['createTime'])?></td>
             <td><?=$val['status']?></td>
             <td>
-                <?php include SITE_PATH . '/../template/manage/dataHandle.php'; ?>
+                <?php include SITE_PATH . '/template/manage/dataHandle.php'; ?>
             </td>
         </tr>
         <?php } ?>

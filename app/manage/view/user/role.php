@@ -43,7 +43,7 @@ use app\manage\model\Role;
             <td><?=Company::get('name', ['id' => $val['companyId']])?></td>
             <td><?=date('Y-m-d H:i:s', $val['createTime'])?></td>
             <td>
-                <?php include SITE_PATH . '/../template/manage/dataHandle.php'; ?>
+                <?php include SITE_PATH . '/template/manage/dataHandle.php'; ?>
             </td>
         </tr>
         <?php } ?>

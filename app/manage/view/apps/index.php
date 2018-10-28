@@ -33,7 +33,7 @@
             <td><?php if($val['status'] == 1) { echo '正常'; } else if($val['status'] == 0) echo '删除'; ?></td>
             <td>
                 <a href="<?=ez\core\Route::createUrl('menu', ['appId' => $val['id']])?>" class="layui-btn layui-btn-xs">功能菜单</a>
-                <?php include SITE_PATH . '/../template/manage/dataHandle.php'; ?>
+                <?php include SITE_PATH . '/template/manage/dataHandle.php'; ?>
             </td>
         </tr>
         <?php } ?>

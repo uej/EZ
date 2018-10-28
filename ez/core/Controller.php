@@ -83,7 +83,7 @@ class Controller
         if (is_array($view)) {
             $this->templateVariable = array_merge($this->templateVariable, $view);
             extract($this->templateVariable);
-            $template = SITE_PATH . '/../' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . ACTION_NAME . '.php';
+            $template = SITE_PATH . '/' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . ACTION_NAME . '.php';
             if(!is_file($template)) {
                 throw new \Exception('template not exists');
             }
@@ -101,7 +101,7 @@ class Controller
             if (is_file($view)) {
                 include $view;
             } else {
-                $template = SITE_PATH . '/../' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . $view . '.php';
+                $template = SITE_PATH . '/' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . $view . '.php';
                 if (!is_file($template)) {
                     throw new \Exception('template not exists');
                 }

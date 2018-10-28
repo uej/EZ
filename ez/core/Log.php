@@ -27,12 +27,12 @@ class Log
      */
     public static function makeDir()
     {
-        $runtimePath = SITE_PATH . '/../runtime';
+        $runtimePath = SITE_PATH . '/runtime';
         if (!is_dir($runtimePath)) {
             mkdir($runtimePath, 0777, TRUE) || 0;
         }
         
-        $todayLogPath = SITE_PATH . '/../runtime/logs/' . date('Ym');
+        $todayLogPath = SITE_PATH . '/runtime/logs/' . date('Ym');
         if (!is_dir($todayLogPath)) {
             mkdir($todayLogPath, 0777, TRUE) || 0;
         }
@@ -48,7 +48,7 @@ class Log
     {
         self::makeDir();
         $msg .= PHP_EOL . Network::get_ip() . PHP_EOL . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] . PHP_EOL;
-        error_log(date('Y-m-d H:i:s ') . $msg . PHP_EOL, 3, SITE_PATH . '/../runtime/logs/' . date('Ym') . '/' . date('Ymd') . '.log');
+        error_log(date('Y-m-d H:i:s ') . $msg . PHP_EOL, 3, SITE_PATH . '/runtime/logs/' . date('Ym') . '/' . date('Ymd') . '.log');
     }
 }
 

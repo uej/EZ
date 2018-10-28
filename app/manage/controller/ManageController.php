@@ -149,10 +149,10 @@ class ManageController extends Controller
         if (is_file($view)) {
             $layout = $view;
         } else {
-            $layout = SITE_PATH . '/../' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . $view . '.php';
+            $layout = SITE_PATH . '/' .APP_PATH_NAME . '/' . APP_NAME .'/view/' . strtolower(CONTROLLER_NAME) . '/' . $view . '.php';
         }
         
         $this->assign('tpl_manage_layout', $layout);
-        $this->display(SITE_PATH . '/../template/manage/layout.php');
+        $this->display(SITE_PATH . '/template/manage/layout.php');
     }
 }

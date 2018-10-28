@@ -40,7 +40,7 @@
             <td><?=$val['askSure']?></td>
             <td><?=$val['status']==1 ? '正常' : '关闭'?></td>
             <td>
-                <?php include SITE_PATH . '/../template/manage/dataHandle.php'; ?>
+                <?php include SITE_PATH . '/template/manage/dataHandle.php'; ?>
             </td>
         </tr>
         <?php } ?>
