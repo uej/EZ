@@ -67,24 +67,29 @@ class Ez
         
         /* 常量设置 */
         if (!defined('HTTPHOST')) {
-            if(!isset($_SERVER['HTTPS']) || empty($_SERVER['HTTPS']) || $_SERVER['HTTPS']=='off') {
-                $http   = 'http://';
-            } else {
-                $http   = 'https://';
-            }
-            
-            if (filter_input(INPUT_SERVER, 'SERVER_PORT') == "80") {
-                define('HTTPHOST', $http.filter_input(INPUT_SERVER, 'SERVER_NAME'));
-            } else {
-                define('HTTPHOST', $http.filter_input(INPUT_SERVER, 'SERVER_NAME').':'.filter_input(INPUT_SERVER, 'SERVER_PORT'));
+            if (PHP_SAPI != 'cli') {
+                if (!isset($_SERVER['HTTPS']) || empty($_SERVER['HTTPS']) || $_SERVER['HTTPS']=='off') {
+                    $http   = 'http://';
+                } else {
+                    $http   = 'https://';
+                }
+
+                if (self::config('httphost') != filter_input(INPUT_SERVER, 'HTTP_HOST')) {
+                    throw new \Exception('Illegal httphost:' . filter_input(INPUT_SERVER, 'HTTP_HOST'));
+                }
+                define('HTTPHOST', $http.filter_input(INPUT_SERVER, 'HTTP_HOST'));
+                
+                $_root  = dirname(filter_input(INPUT_SERVER, 'SCRIPT_NAME'));
+                $_root  = str_replace('\\', '/', $_root);
+                define('__ROOT__',  (($_root=='/' || $_root=='\\') ? '' : rtrim($_root,'/')));
+                
+                if (!defined('SITE_URL'))   define('SITE_URL',   HTTPHOST . __ROOT__);
+                if (!defined('__CSS__'))    define('__CSS__',    SITE_URL . '/css');
+                if (!defined('__JS__'))     define('__JS__',     SITE_URL . '/js');
+                if (!defined('__IMG__'))    define('__IMG__',    SITE_URL . '/images');
+                if (!defined('__VIDEO__'))  define('__VIDEO__',  SITE_URL . '/videos');
             }
         }
-        if (!defined('SITE_URL'))   define('SITE_URL',   HTTPHOST);
-        if (!defined('__CSS__'))    define('__CSS__',    HTTPHOST.'/css');
-        if (!defined('__JS__'))     define('__JS__',     HTTPHOST.'/js');
-        if (!defined('__IMG__'))    define('__IMG__',    HTTPHOST.'/images');
-        if (!defined('__VIDEO__'))  define('__VIDEO__',  HTTPHOST.'/videos');
-        
     }
     
     /**
@@ -94,8 +99,8 @@ class Ez
      */
     public static function start()
     {
-        self::_init();
         try {
+            self::_init();
             $app = new Application();
             $app->run();
         } catch (Exception $ex) {

@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
     <title>系统后台</title>
-    <script type="text/javascript" src="/win10ui/js/jquery-2.2.4.min.js"></script>
-    <link href="/win10ui/css/animate.css" rel="stylesheet">
-    <script type="text/javascript" src="/win10ui/component/layer-v3.0.3/layer/layer.js"></script>
-    <link rel="stylesheet" href="/win10ui/component/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link href="/win10ui/css/default.css" rel="stylesheet">
-    <script type="text/javascript" src="/win10ui/js/win10.js"></script>
+    <script type="text/javascript" src="<?=SITE_URL?>/win10ui/js/jquery-2.2.4.min.js"></script>
+    <link href="<?=SITE_URL?>/win10ui/css/animate.css" rel="stylesheet">
+    <script type="text/javascript" src="<?=SITE_URL?>/win10ui/component/layer-v3.0.3/layer/layer.js"></script>
+    <link rel="stylesheet" href="<?=SITE_URL?>/win10ui/component/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="<?=SITE_URL?>/win10ui/css/default.css" rel="stylesheet">
+    <script type="text/javascript" src="<?=SITE_URL?>/win10ui/js/win10.js"></script>
     <style>
         * {
             font-family: "Microsoft YaHei", 微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu
@@ -27,8 +27,8 @@
 
             //设置壁纸
             Win10.setBgUrl({
-                main:'/win10ui/img/wallpapers/main.jpg',
-                mobile:'/win10ui/img/wallpapers/mobile.jpg',
+                main:'<?=SITE_URL?>/win10ui/img/wallpapers/main.jpg',
+                mobile:'<?=SITE_URL?>/win10ui/img/wallpapers/mobile.jpg',
             });
 
             Win10.setAnimated([
@@ -41,7 +41,7 @@
         function win10_forgive_me() {
             Win10.enableFullScreen();
             layer.alert('点击展示下一版本特性', {}, function(index){
-                var blue=$('<img src="/win10ui/img/presentation/bluescreen.jpg" style="position: fixed;width: 100%;height:100%;top:0;z-index:9999999999" />');
+                var blue=$('<img src="<?=SITE_URL?>/win10ui/img/presentation/bluescreen.jpg" style="position: fixed;width: 100%;height:100%;top:0;z-index:9999999999" />');
                 setTimeout(function () {
                     $('body').append(blue);
                 },3000);
@@ -90,7 +90,7 @@
                 area:'300px',
                 offset:'50px',
                 shadeClose:true,
-                content: '<img width=\'300\' src=\'/win10ui/img/presentation/hongbao.jpg\' />'
+                content: '<img width=\'300\' src=\'<?=SITE_URL?>/win10ui/img/presentation/hongbao.jpg\' />'
             })"><i class="red icon fa fa-envelope fa-fw"></i>领红包</div>
             <div class="item" onclick="Win10.exit('<?=ez\core\Route::createUrl('manage/popedom/logout')?>');"><i class="black icon fa fa-power-off fa-fw"></i>退出</div>
         </div>

@@ -5,7 +5,7 @@
     <title>登录</title>
     <style>
         #win10-login {
-            background: url('/win10ui/img/wallpapers/login.jpg') no-repeat fixed;
+            background: url('<?=SITE_URL?>/win10ui/img/wallpapers/login.jpg') no-repeat fixed;
             width: 100%;
             height: 100%;
             background-size: 100% 100%;
@@ -132,7 +132,7 @@
     <div style="height: 10%;min-height: 120px"></div>
     <div id="win10-login-box">
         <div class="win10-login-box-square">
-            <img src="/win10ui/img/avatar.jpg" class="content"/>
+            <img src="<?=SITE_URL?>/win10ui/img/avatar.jpg" class="content"/>
         </div>
         <p style="font-size: 24px;color: white;text-align: center">游客</p>
         <input type="text" id="account" placeholder="请输入登录名" class="login-username">
@@ -147,10 +147,10 @@
     </div>
 </div>
 
-<script src="/layui/layui.all.js" type="text/javascript"></script>
-<script src="/win10ui/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-<script src="/js/CryptoJS/rollups/md5.js" type="text/javascript"></script>
-<script src="/js/CryptoJS/rollups/sha1.js" type="text/javascript"></script>
+<script src="<?=SITE_URL?>/layui/layui.all.js" type="text/javascript"></script>
+<script src="<?=SITE_URL?>/win10ui/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+<script src="<?=__JS__?>/CryptoJS/rollups/md5.js" type="text/javascript"></script>
+<script src="<?=__JS__?>/CryptoJS/rollups/sha1.js" type="text/javascript"></script>
 <script>
 /**
  * 刷新验证码

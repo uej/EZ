@@ -125,12 +125,13 @@ class ManageController extends Controller
             $ips = [
                 '127.0.0.1',
                 '0.0.0.0',
+                '192.168.109.1',
             ];
         }
 
         /* 系统后台 */
         if (is_array($ips) && count($ips) > 0 && !in_array(Network::get_ip(), $ips)) {
-            header('Location: ' . HTTPHOST);
+            header('Location: ' . SITE_URL);
             exit;
         }
     }

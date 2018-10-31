@@ -119,19 +119,15 @@ class Route
      * @return string URL
      * @access public
      */
-    public static function createUrl($url = '', $params = [], $domain = TRUE, $redirect = FALSE, $entry = NULL)
+    public static function createUrl($url = '', $params = [], $domain = TRUE, $redirect = FALSE)
     {
         if (empty($url)) {
             $url    = APP_NAME . '/' . CONTROLLER_NAME . '/' . ACTION_NAME;
         }
         
         /* 伪静态判断 */
-        if (!Ez::config('urlRewrite') || !empty($entry)) {
-            if (empty($entry)) {
-                $entry  = filter_input(INPUT_SERVER, 'SCRIPT_NAME');
-            } else {
-                $entry  = '/'.$entry;
-            }
+        if (!Ez::config('urlRewrite')) {
+            $entry  = filter_input(INPUT_SERVER, 'SCRIPT_NAME');
             $realurl    = $domain ? HTTPHOST . $entry : $entry;
         } else {
             if (!empty($_SERVER['ORIG_SCRIPT_NAME'])) {
@@ -139,11 +135,7 @@ class Route
             } else {
                 $entry  = filter_input(INPUT_SERVER, 'SCRIPT_NAME');
             }
-            if ($entry == '/index.php') {
-                $realurl    = $domain ? HTTPHOST : '';
-            } else {
-                $realurl    = $domain ? HTTPHOST . $entry : $entry;
-            }
+            $realurl    = $domain ? SITE_URL : str_replace('/index.php', '', $entry);
         }
         
         /* get参数组装 */

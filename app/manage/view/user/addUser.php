@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>添加用户</title>
-    <link href="/layui/css/layui.css" rel="stylesheet" type="text/css"/>
+    <link href="<?=SITE_URL?>/layui/css/layui.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <div class="layui-form" style="margin-top: 20px;">
@@ -81,8 +81,8 @@
             </div>
         </div>
     </div>
-    <script src="/win10ui/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-    <script src="/layui/layui.all.js" type="text/javascript"></script>
+    <script src="<?=SITE_URL?>/win10ui/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <script src="<?=SITE_URL?>/layui/layui.all.js" type="text/javascript"></script>
     <script>
         var form = layui.form;
         

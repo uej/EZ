@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title><?=$tpl_manage_app['title']?></title>
-    <link href="/layui/css/layui.css" rel="stylesheet" type="text/css"/>
+    <link href="<?=SITE_URL?>/layui/css/layui.css" rel="stylesheet" type="text/css"/>
     <style>
         .pages { width: 100%; height: 38px; }
         .pages .page { float: right; line-height: 38px; font-size: 12px; }
@@ -26,8 +26,8 @@
             <?php } ?>
         </ul>
         <div class="layui-tab-content">
-            <script src="/win10ui/js/jquery-2.2.4.min.js" type="text/javascript"></script>
-            <script src="/layui/layui.all.js" type="text/javascript"></script>
+            <script src="<?=SITE_URL?>/win10ui/js/jquery-2.2.4.min.js" type="text/javascript"></script>
+            <script src="<?=SITE_URL?>/layui/layui.all.js" type="text/javascript"></script>
             <?php include $tpl_manage_layout; ?>
             <div class="pages">
                 <?php foreach ($tpl_manage_menuMenu as $handle) { ?>

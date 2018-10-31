@@ -17,3 +17,14 @@ function dump($a){
     echo "</pre>";
 }
 
+/**
+ * 计时测试
+ */
+function testtime($id) {
+    $path   = SITE_PATH . '/runtime/data/testtime/';
+    mkdir($path, 0777, true);
+    $filename = $path . "$id-" . time();
+    fopen($filename, 'w+');
+    
+}
+

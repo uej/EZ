@@ -17,14 +17,14 @@ return [
     /* 主数据库 */
     'dbMaster'          => [
 //        [
-//            'dbHost'            => '192.168.19.134',
-//            'dbName'            => 'test',
-//            'dbUser'            => 'root',
-//            'dbPassword'        => '123456',
-//            'dbPort'            => 3306,
+//            'dbHost'        => '192.168.109.130',
+//            'dbName'        => 'test',
+//            'dbUser'        => 'root',
+//            'dbPassword'    => '123456',
+//            'dbPort'        => 3306,
 //        ],
         [
-            'dbHost'            => '127.0.0.1',
+            'dbHost'            => '10.10.10.12',
             'dbName'            => 'test',
             'dbUser'            => 'root',
             'dbPassword'        => 'root',
@@ -35,9 +35,9 @@ return [
     /* 从数据库 */
     'dbSlave'           => [
         [
-            'dbHost'        => '192.168.19.136',
+            'dbHost'        => '192.168.109.131',
             'dbName'        => 'test',
-            'dbUser'        => 'lxj',
+            'dbUser'        => 'root',
             'dbPassword'    => '123456',
             'dbPort'        => 3306,
         ],
@@ -49,6 +49,8 @@ return [
     'defaultAction'     => 'index',
     
     /* url规则配置 */
+//    'httphost'          => 'www.bez.cn:8004',
+    'httphost'          => 'w.ezphp.cn',
     'urlRewrite'        => 0,
     'urlSuffix'         => '.html',
     
