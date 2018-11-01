@@ -10,32 +10,32 @@ return [
     
     /* 数据库配置 */
     'dbType'            => 'mysql',
-    'dbDistributede'    => 0,           // 0：单数据库、互为主从  1：主从读写分离
+    'dbDistributede'    => 1,           // 0：单数据库、互为主从  1：主从读写分离
     'dbPrefix'          => 'cmf_',      // 数据库表前缀
     'dbCharset'         => 'utf8',      // 数据库链接字符集
     
     /* 主数据库 */
     'dbMaster'          => [
-//        [
-//            'dbHost'        => '192.168.109.130',
-//            'dbName'        => 'test',
-//            'dbUser'        => 'root',
-//            'dbPassword'    => '123456',
-//            'dbPort'        => 3306,
-//        ],
         [
-            'dbHost'            => '10.10.10.12',
-            'dbName'            => 'test',
-            'dbUser'            => 'root',
-            'dbPassword'        => 'root',
-            'dbPort'            => 3306,
+            'dbHost'        => '10.10.10.151',
+            'dbName'        => 'test',
+            'dbUser'        => 'root',
+            'dbPassword'    => '123456',
+            'dbPort'        => 3306,
         ],
+//        [
+//            'dbHost'            => '10.10.10.12',
+//            'dbName'            => 'test',
+//            'dbUser'            => 'root',
+//            'dbPassword'        => 'root',
+//            'dbPort'            => 3306,
+//        ],
     ],
     
     /* 从数据库 */
     'dbSlave'           => [
         [
-            'dbHost'        => '192.168.109.131',
+            'dbHost'        => '10.10.10.152',
             'dbName'        => 'test',
             'dbUser'        => 'root',
             'dbPassword'    => '123456',
@@ -49,8 +49,8 @@ return [
     'defaultAction'     => 'index',
     
     /* url规则配置 */
-//    'httphost'          => 'www.bez.cn:8004',
-    'httphost'          => 'w.ezphp.cn',
+    'httphost'          => 'www.bez.cn:8004',
+//    'httphost'          => 'w.ezphp.cn',
     'urlRewrite'        => 0,
     'urlSuffix'         => '.html',
     

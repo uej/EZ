@@ -2,6 +2,7 @@
 namespace app\manage\controller;
 use app\manage\model\Apps;
 use app\manage\model\Menu;
+use app\manage\model\User;
 
 /**
  * 后台首页
@@ -54,5 +55,36 @@ class IndexController extends ManageController {
         $this->assign('user', $this->user);
         $this->display();
     }
+    
+    /**
+     * 修改密码
+     * 
+     * @access public
+     */
+    public function changepwd() {
+        if (empty($_POST)) {
+            $this->display();
+        } else {
+            $oldPassword    = $_POST['oldPassword'];
+            $password       = $_POST['password'];
+            $passwordAgain  = $_POST['passwordAgain'];
+            $signOldPwd     = sha1(sha1($this->user['account'] . $oldPassword));
+                    
+            if ($signOldPwd != User::get('password', ['id' => $this->user['id']])) {
+                $this->ajaxReturn('旧密码输入错误', 0);
+            }
+            if ($password !== $passwordAgain) {
+                $this->ajaxReturn('两次密码输入不一致', 0);
+            }
+            $newSignPwd = sha1(sha1($this->user['account'] . $password));
+            $res    = User::update(['password' => $newSignPwd], ['id' => $this->user['id']]);
+            if ($res->errorCode() === '00000') {
+                $this->ajaxReturn('修改成功');
+            } else {
+                $this->ajaxReturn('修改失败', 0);
+            }
+        }
+    }
+    
 }
 
