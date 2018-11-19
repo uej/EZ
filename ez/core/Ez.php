@@ -40,6 +40,9 @@ class Ez
         
         set_error_handler(["\\ez\\core\\Error", "errorHandler"]);
         set_exception_handler(["\\ez\\core\\Error", "exceptionHandler"]);
+        if (empty(self::config('debug'))) {
+            ini_set('display_errors', 0);
+        }
         
         /* 是否开启面压缩 */
         if (self::config('openGzip')) {
