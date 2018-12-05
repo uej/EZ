@@ -33,7 +33,7 @@ class ManageController extends Controller
             self::_manageIpFilter();
         }
         
-        $this->user = Session::get('user');
+        $this->user = Session::get('manage_user');
         
         if (empty($this->user['id'])) {
             $this->redirect('manage/popedom/index');

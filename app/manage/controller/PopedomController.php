@@ -81,7 +81,7 @@ class PopedomController extends Controller
             $res    = $user->login($account, $password, Session::get('loginSalt'));
             Session::set('loginSalt', NULL);
             if ($res['code'] == 1) {
-                Session::set('user', $res['userData']);
+                Session::set('manage_user', $res['userData']);
                 $this->ajaxReturn(\ez\core\Route::createUrl('index/index'), 1);
             } else {
                 $this->ajaxReturn($res['msg'], 0);

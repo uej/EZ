@@ -200,6 +200,7 @@ $("#dologin").click(function() {
                         if (resdata.status == 1) {
                             location.href = resdata.info;
                         } else {
+                            $("#vcode").attr("src", "<?=ez\core\Route::createUrl('verifyCode')?>?" + Math.random());
                             layer.msg(resdata.info);
                         }
                     },
