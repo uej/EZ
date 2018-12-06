@@ -36,6 +36,10 @@ class Session
      */
     public static function set($key, $value = NULL)
     {
+        if ($key === NULL) {
+            $_SESSION = [];
+        }
+        
         if (is_array($key) && empty($value)) {
             foreach ($key as $k => $v) {
                 $_SESSION[$k] = $v;
@@ -49,10 +53,6 @@ class Session
                 unset($_SESSION[$key]);
             }
             return TRUE;
-        }
-        
-        if ($key === NULL) {
-            $_SESSION = [];
         }
         
         return FALSE;
