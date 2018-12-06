@@ -71,16 +71,17 @@ class Ez
         /* 常量设置 */
         if (!defined('HTTPHOST')) {
             if (PHP_SAPI != 'cli') {
-                if (!isset($_SERVER['HTTPS']) || empty($_SERVER['HTTPS']) || $_SERVER['HTTPS']=='off') {
+                if (empty($_SERVER['HTTPS']) || $_SERVER['HTTPS']=='off') {
                     $http   = 'http://';
                 } else {
                     $http   = 'https://';
                 }
-
-                if (self::config('httphost') != filter_input(INPUT_SERVER, 'HTTP_HOST')) {
-                    throw new \Exception('Illegal httphost:' . filter_input(INPUT_SERVER, 'HTTP_HOST'));
+                
+                $http_host  = filter_input(INPUT_SERVER, 'HTTP_HOST');
+                if (!in_array($http_host, self::config('httphost'))) {
+                    throw new \Exception('Illegal httphost:' . $http_host);
                 }
-                define('HTTPHOST', $http.filter_input(INPUT_SERVER, 'HTTP_HOST'));
+                define('HTTPHOST', $http . $http_host);
                 
                 $_root  = dirname(filter_input(INPUT_SERVER, 'SCRIPT_NAME'));
                 $_root  = str_replace('\\', '/', $_root);

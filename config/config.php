@@ -49,7 +49,9 @@ return [
     'defaultAction'     => 'index',
     
     /* url规则配置 */
-    'httphost'          => 'www.bez.cn:8004',
+    'httphost'          => [
+        'www.bez.cn:8004',
+    ],
 //    'httphost'          => 'w.ezphp.cn',
     'urlRewrite'        => 0,
     'urlSuffix'         => '.html',
