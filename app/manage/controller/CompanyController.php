@@ -56,7 +56,6 @@ class CompanyController extends ManageController {
                 $this->error('商户联系电话不能为空');
             }
             $data['createUserId']   = $this->user['id'];
-            $data['apps']   = implode(',', $data['apps']);
             
             if ($company->insert($data)->errorCode() === '00000') {
                 $this->success('添加成功');
@@ -97,7 +96,6 @@ class CompanyController extends ManageController {
                 $this->error('商户联系电话不能为空');
             }
             $data['modifyUserId']   = $this->user['id'];
-            $data['apps']   = implode(',', $data['apps']);
             
             if ($company->update($data, ['id' => $id])->errorCode() === '00000') {
                 $this->success('编辑成功');
