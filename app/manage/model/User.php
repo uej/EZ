@@ -2,6 +2,7 @@
 namespace app\manage\model;
 use ez\core\Model;
 use ez\core\Ez;
+use ez\core\Log;
 
 /**
  * 后台用户模型
@@ -119,10 +120,10 @@ class User extends Model
         }
         $result = $this->update($data, ['id' => $data['id']]);
         if ($result->errorCode() === '00000') {
-            return $this->id();
+            return true;
         } else {
-            $this->error = '添加用户失败';
-            Log::addLog('添加应用失败：'.$result->errorInfo[2]);
+            $this->error = '编辑用户失败';
+            Log::addLog('编辑用户失败：'.$result->errorInfo[2]);
             return FALSE;
         }
     }

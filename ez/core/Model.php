@@ -402,6 +402,7 @@ class Model
         return [
             'data'      => $data,
             'pages'     => $pages,
+            'nowPage'   => $p,
             'count'     => $count,
             'html'      => $html,
         ];

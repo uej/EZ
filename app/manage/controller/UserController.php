@@ -32,6 +32,9 @@ class UserController extends ManageController {
         if (!empty($companyId)) {
             $where['companyId'] = $companyId;
         }
+        if ($this->user['companyId'] != 1) {
+            $where['companyId'] = $this->user['companyId'];
+        }
         
         $user   = new User();
         $data   = $user->findPage(10, $where);
@@ -98,7 +101,7 @@ class UserController extends ManageController {
             $user   = new User();
             $data   = $user->create();
             if ($user->editUser($data)) {
-                $this->success('添加成功');
+                $this->success('编辑成功');
             } else {
                 $this->error($user->error);
             }
@@ -149,12 +152,8 @@ class UserController extends ManageController {
                 $company    = Company::select(['id', 'name']);
                 $this->assign('company', $company);
             } else {
-                $menus  = Menu::select(['id', 'title', 'appId'], ['appId' => explode(',', $this->user['role']['apps'])]);
-                if ($this->user['companyId'] == 1) {
-                    $apps   = Apps::select(['id', 'title']);
-                } else {
-                    $apps   = Apps::select(['id', 'title'], ['id' => explode(',', $this->user['company']['apps'])]);
-                }
+                $menus  = Menu::select(['id', 'title', 'appId'], ['id' => explode(',', $this->user['role']['menuId'])]);
+                $apps   = Apps::select(['id', 'title'], ['id' => explode(',', $this->user['role']['apps'])]);
             }
             $this->assign('menus', $menus);
             $this->assign('apps', $apps);
@@ -195,8 +194,8 @@ class UserController extends ManageController {
                     $company    = Company::select(['id', 'name']);
                     $this->assign('company', $company);
                 } else {
-                    $menus  = Menu::select(['id', 'title', 'appId'], ['appId' => explode(',', $this->user['role']['apps'])]);
-                    $apps   = Apps::select(['id', 'title'], ['id' => explode(',', $this->user['company']['apps'])]);
+                    $menus  = Menu::select(['id', 'title', 'appId'], ['id' => explode(',', $this->user['role']['menuId'])]);
+                    $apps   = Apps::select(['id', 'title'], ['id' => explode(',', $this->user['role']['apps'])]);
                 }
 
                 $this->assign('user', $this->user);

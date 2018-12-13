@@ -24,7 +24,7 @@
         <div class="layui-form-item">
             <label class="layui-form-label">密码</label>
             <div class="layui-input-block">
-                <input type="text" autocomplete="off" name="password" class="layui-input" lay-verify="required" style="width: 300px;">
+                <input type="text" autocomplete="off" name="password" class="layui-input" style="width: 300px;">
             </div>
         </div>
         
@@ -115,7 +115,7 @@
         //监听提交
         form.on('submit(dosubmit)', function(data) {
             $.ajax({
-                url: "<?= ez\core\Route::createUrl('addUser')?>",
+                url: "<?= ez\core\Route::createUrl('editUser')?>",
                 data: data.field,
                 type: "post",
                 dataType: "json",
