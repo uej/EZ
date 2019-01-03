@@ -7,6 +7,7 @@
 
 /* 入口目录 */
 define('SITE_PATH', substr(__DIR__, 0, strlen(__DIR__) - 7));
+define('ENTRY_PATH', __DIR__);
 
 /* 应用配置 */
 $_config = include(__DIR__ . '/../config/config.php');

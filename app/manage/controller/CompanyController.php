@@ -40,6 +40,7 @@ class CompanyController extends ManageController {
      */
     public function addCompany() {
         if (empty($_POST)) {
+            $this->assign('typelist', CompanyType::select('*'));
             $this->display();
         } else {
             $company    = new Company();
@@ -55,6 +56,10 @@ class CompanyController extends ManageController {
             if (empty($data['phone'])) {
                 $this->error('商户联系电话不能为空');
             }
+            if (empty($data['typeId'])) {
+                $this->error('商户类型必选');
+            }
+            
             $data['createUserId']   = $this->user['id'];
             
             if ($company->insert($data)->errorCode() === '00000') {
@@ -75,6 +80,7 @@ class CompanyController extends ManageController {
             $id = intval($_GET['id']);
             if ($id > 0) {
                 $data   = Company::get('*', ['id' => $id]);
+                $this->assign('typelist', CompanyType::select('*'));
                 $this->assign('data', $data);
                 $this->display();
             }
@@ -94,6 +100,9 @@ class CompanyController extends ManageController {
             }
             if (empty($data['phone'])) {
                 $this->error('商户联系电话不能为空');
+            }
+            if (empty($data['typeId'])) {
+                $this->error('商户类型必选');
             }
             $data['modifyUserId']   = $this->user['id'];
             

@@ -34,8 +34,7 @@ class IndexController extends ManageController {
             }
         } else {
             $apps   = Apps::select(['app', 'title', 'manageEntryUrl', 'logo', 'id', 'logoColor'], [
-                'id'    => explode(',', $this->user['company']['apps']),
-                'id'    => explode(',', $this->user['role']['apps']),
+                'id'    => array_intersect(explode(',', $this->user['company']['apps']), explode(',', $this->user['role']['apps'])),
                 'ORDER' => ['sort' => 'ASC'],
             ]);
             foreach ($apps as $key => $val) {

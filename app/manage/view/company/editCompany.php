@@ -34,6 +34,17 @@
             </div>
         </div>
         <div class="layui-form-item">
+            <label class="layui-form-label">商户类型</label>
+            <div class="layui-input-block" style="width: 300px;">
+                <select name="typeId" id="typeId" lay-filter="companyId" lay-verify="required" lay-verify="required">
+                    <option value="">请选择商户类型</option>
+                    <?php foreach ($typelist as $val) { ?>
+                    <option value="<?=$val['id']?>" <?php if($data['typeId'] == $val['id']) echo 'selected'; ?>><?=$val['name']?></option>
+                    <?php } ?>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item">
             <div class="layui-input-block">
                 <button class="layui-btn" lay-submit lay-filter="dosubmit">立即提交</button>
             </div>

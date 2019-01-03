@@ -158,4 +158,18 @@ class ManageController extends Controller
         $this->assign('tpl_manage_layout', $layout);
         $this->display(SITE_PATH . '/template/manage/layout.php');
     }
+    
+    /**
+     * 上传文件至开放目录
+     * 
+     * @access public
+     */
+    public function openupload() {
+        $upload = new \ez\driver\Upload([
+            'uploadPath'    => ENTRY_PATH . '/uploads/',
+        ]);
+        $res    = $upload->doUpload();
+        $res['savePath']    = str_replace(ENTRY_PATH, '', $res['savePath']);
+        die(json_encode($res));
+    }
 }
