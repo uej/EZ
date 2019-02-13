@@ -28,6 +28,10 @@ class Model
      */
     public $tablePrefix;
     
+    /**
+     * 表名
+     */
+    public $table;
     
     
     /**
